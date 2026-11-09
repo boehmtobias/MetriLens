@@ -1,0 +1,56 @@
+# Derived from InvenTree (https://github.com/inventree/InvenTree), contrib/container/, MIT License, Copyright (c) InvenTree contributors
+
+# Caddyfile for InvenTree, shared unchanged by every stack in this directory. Environment
+# variables it reads: INVENTREE_SITE_URL, INVENTREE_SERVER.
+# Ref: https://caddyserver.com/docs/caddyfile
+(log_common) {
+	log {
+		output file /var/log/caddy/{args[0]}.access.log
+	}
+}
+
+(cors-headers) {
+	header Allow GET,HEAD,OPTIONS
+	header Access-Control-Allow-Origin *
+	header Access-Control-Allow-Methods GET,HEAD,OPTIONS
+	header Access-Control-Allow-Headers Authorization,Content-Type,User-Agent,traceparent
+
+	@cors_preflight{args[0]} method OPTIONS
+
+	handle @cors_preflight{args[0]} {
+		respond "" 204
+	}
+}
+
+{$INVENTREE_SITE_URL:"http://, https://"} {
+	import log_common inventree
+
+	encode gzip
+
+	request_body {
+		max_size 100MB
+	}
+
+	handle_path /static/* {
+		import cors-headers static
+
+		root * /var/www/static
+		file_server
+	}
+
+	handle_path /media/* {
+		import cors-headers media
+
+		root * /var/www/media
+		file_server
+
+		header Content-Disposition attachment
+
+		forward_auth {$INVENTREE_SERVER:"http://inventree-server:8000"} {
+			uri /auth/
+		}
+	}
+
+	reverse_proxy {$INVENTREE_SERVER:"http://inventree-server:8000"} {
+	}
+}

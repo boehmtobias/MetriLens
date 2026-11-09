@@ -1,0 +1,1135 @@
+{
+  "scenario_id": 2,
+  "comparison_session_id": 10,
+  "generated_at": "2026-10-23T06:51:57.718110+00:00",
+  "session_context": {
+    "execution_order": [
+      7,
+      7,
+      8,
+      7,
+      7,
+      8,
+      7,
+      7,
+      7,
+      8,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8,
+      7,
+      7,
+      8,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      7,
+      7,
+      8,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      7,
+      8,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      8,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8
+    ],
+    "random_seed": 20260922,
+    "idle_power_calibration": {
+      "package_0": 16.6885
+    },
+    "host_descriptor": "measurement_host",
+    "metrion_config_path": "/opt/metrion-runtime/config.yaml",
+    "cpu_governor": "performance",
+    "host_facts": {
+      "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+      "cpu_count": 24,
+      "ram_bytes": 65425850368,
+      "kernel_release": "7.0.0-31-generic",
+      "distro": "Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+      "virtualization": "none",
+      "rapl_domains": [
+        "intel-rapl",
+        "intel-rapl-mmio",
+        "intel-rapl-mmio:0",
+        "intel-rapl:0",
+        "intel-rapl:0:0",
+        "intel-rapl:0:1"
+      ],
+      "python_version": "3.12.13",
+      "docker_version": "Docker version 29.8.1, build 4a63305",
+      "metrion_version": "metrion-0.1.0",
+      "metrion_package_sha256": "0a7b4649340749c07007e6f98e2094c6670a9841096a3a081274b4738977221b"
+    }
+  },
+  "equivalence_check": {
+    "verdict": "PASS",
+    "notes": null,
+    "checked_at": "2026-09-22T14:05:33.372001"
+  },
+  "scenario_iterations": 3,
+  "step_order": [
+    "create_part",
+    "adjust_stock",
+    "browse_catalog",
+    "run_build_order"
+  ],
+  "versions": {
+    "a": {
+      "app_version_id": 7,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=False cache=True",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 5,
+      "n_noted": 5,
+      "started_at": "2026-09-22T14:08:34.340934",
+      "ended_at": "2026-09-22T16:06:54.885991",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 416.02868650935875,
+        "sd": 11.653775716293033,
+        "median": 413.38007745378195,
+        "min": 395.4172797975257,
+        "max": 447.2344304829786
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 38.03333333333333,
+        "sd": 0.99942512211403
+      },
+      "container_breakdown": {
+        "inventree-worker": 148.94202378115614,
+        "inventree-cache": 3.5163500211067538,
+        "inventree-db": 147.56659951714963,
+        "inventree-proxy": 6.405132280219248,
+        "inventree-server": 109.59858090972692
+      },
+      "step_breakdown": {
+        "run_build_order": 49.53814967336215,
+        "adjust_stock": 98.1360567212487,
+        "create_part": 84.15926116956429,
+        "browse_catalog": 183.6031057203744
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 305.3898394952065,
+          "sd": 8.665851763026213
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 110.63884701415215,
+          "sd": 3.605965074939837
+        },
+        "active_share": 0.7340595718471846,
+        "reconciles": true
+      }
+    },
+    "b": {
+      "app_version_id": 8,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=True cache=False",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 4,
+      "n_noted": 4,
+      "started_at": "2026-09-22T14:13:53.349897",
+      "ended_at": "2026-09-22T16:14:03.357925",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 467.3355430665293,
+        "sd": 8.418414705633403,
+        "median": 469.0271180201719,
+        "min": 447.8284115617437,
+        "max": 481.79942658635053
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 37.9,
+        "sd": 0.8448627719625692
+      },
+      "container_breakdown": {
+        "inventree-worker": 179.95974334955073,
+        "inventree-cache": 1.3342554506887465,
+        "inventree-db": 166.8457299678785,
+        "inventree-proxy": 6.394797663136766,
+        "inventree-server": 112.80101663527435
+      },
+      "step_breakdown": {
+        "run_build_order": 50.777006309643,
+        "adjust_stock": 108.3986250220975,
+        "create_part": 140.09763833338846,
+        "browse_catalog": 166.9906792423151
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 343.58186980269403,
+          "sd": 5.9242506345580574
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 123.75367326383532,
+          "sd": 3.085064334113742
+        },
+        "active_share": 0.7351931067519556,
+        "reconciles": true
+      }
+    }
+  },
+  "comparison": {
+    "baseline": "a",
+    "cpu_energy_j": {
+      "difference_j": 51.30685655717053,
+      "welch": {
+        "t": 19.547292145810488,
+        "df": 52.78834832047171,
+        "p": 7.814167450028694e-26,
+        "ci95_j": [
+          46.041771553977405,
+          56.57194156036366
+        ]
+      },
+      "relative_difference": {
+        "percent": 12.332528554137664,
+        "ci95_percent": [
+          10.974108637215085,
+          13.714595681062347
+        ],
+        "method": "fieller"
+      },
+      "mann_whitney_p": 3.0198593591621564e-11,
+      "order_adjusted": {
+        "difference_j": 52.433807243080814,
+        "ci95_j": [
+          47.04594763978118,
+          57.821666846380445
+        ]
+      }
+    },
+    "dram_energy_j": null,
+    "container_deltas": [
+      {
+        "role": "inventree-worker",
+        "delta_j": 31.017719568394597,
+        "welch_ci95_j": [
+          28.253473195093395,
+          33.781965941695795
+        ]
+      },
+      {
+        "role": "inventree-db",
+        "delta_j": 19.27913045072887,
+        "welch_ci95_j": [
+          17.643851142029607,
+          20.914409759428136
+        ]
+      },
+      {
+        "role": "inventree-server",
+        "delta_j": 3.2024357255474314,
+        "welch_ci95_j": [
+          0.06354183848084327,
+          6.34132961261402
+        ]
+      },
+      {
+        "role": "inventree-proxy",
+        "delta_j": -0.01033461708248229,
+        "welch_ci95_j": [
+          -0.1510690705434167,
+          0.13039983637845212
+        ]
+      },
+      {
+        "role": "inventree-cache",
+        "delta_j": -2.1820945704180073,
+        "welch_ci95_j": [
+          -2.224845209916814,
+          -2.1393439309192006
+        ]
+      }
+    ],
+    "step_deltas": [
+      {
+        "step_id": "create_part",
+        "delta_j": 55.93837716382417
+      },
+      {
+        "step_id": "adjust_stock",
+        "delta_j": 10.262568300848798
+      },
+      {
+        "step_id": "browse_catalog",
+        "delta_j": -16.61242647805929
+      },
+      {
+        "step_id": "run_build_order",
+        "delta_j": 1.2388566362808504
+      }
+    ]
+  },
+  "per_iteration": {
+    "iterations": [
+      1,
+      2,
+      3
+    ],
+    "a": {
+      "1": {
+        "n": 30,
+        "mean": 63.76415601317844,
+        "sd": 31.336626448211135
+      },
+      "2": {
+        "n": 30,
+        "mean": 229.41389039616186,
+        "sd": 36.46336069220589
+      },
+      "3": {
+        "n": 30,
+        "mean": 72.72037720184714,
+        "sd": 23.98791233506053
+      }
+    },
+    "b": {
+      "1": {
+        "n": 30,
+        "mean": 60.91991040744876,
+        "sd": 5.6891697358132625
+      },
+      "2": {
+        "n": 30,
+        "mean": 169.3765933810429,
+        "sd": 34.97014320214212
+      },
+      "3": {
+        "n": 30,
+        "mean": 185.19043880930937,
+        "sd": 33.914597009198665
+      }
+    }
+  },
+  "repetitions": [
+    {
+      "slot": 0,
+      "version": "a",
+      "repetition_index": 0,
+      "cpu_energy_j": 413.60719684774233,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:08:34.342866",
+      "start_time": "2026-09-22T14:09:34.085493",
+      "end_time": "2026-09-22T14:10:12.028011",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 1,
+      "version": "a",
+      "repetition_index": 1,
+      "cpu_energy_j": 411.4790107969552,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:12:05.322672",
+      "start_time": "2026-09-22T14:13:06.896658",
+      "end_time": "2026-09-22T14:13:43.803645",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_001/raw_cpu_20260922_141204.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 2,
+      "version": "b",
+      "repetition_index": 0,
+      "cpu_energy_j": 459.60316426232504,
+      "dram_energy_j": null,
+      "runtime_s": 36.0,
+      "measurement_started_at": "2026-09-22T14:13:53.350502",
+      "start_time": "2026-09-22T14:14:53.068032",
+      "end_time": "2026-09-22T14:15:28.657735",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 3,
+      "version": "a",
+      "repetition_index": 2,
+      "cpu_energy_j": 431.76300338874483,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:15:37.723863",
+      "start_time": "2026-09-22T14:16:45.277008",
+      "end_time": "2026-09-22T14:17:21.540064",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 4,
+      "version": "a",
+      "repetition_index": 3,
+      "cpu_energy_j": 433.1330720563092,
+      "dram_energy_j": null,
+      "runtime_s": 40.0,
+      "measurement_started_at": "2026-09-22T14:17:31.032206",
+      "start_time": "2026-09-22T14:18:31.520029",
+      "end_time": "2026-09-22T14:19:10.241626",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 5,
+      "version": "b",
+      "repetition_index": 1,
+      "cpu_energy_j": 477.6874184507269,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:19:19.245292",
+      "start_time": "2026-09-22T14:20:17.433026",
+      "end_time": "2026-09-22T14:20:53.130248",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 6,
+      "version": "a",
+      "repetition_index": 4,
+      "cpu_energy_j": 422.53594407675223,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:22:46.593603",
+      "start_time": "2026-09-22T14:23:44.454146",
+      "end_time": "2026-09-22T14:24:22.788544",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_006/raw_cpu_20260922_142245.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 7,
+      "version": "a",
+      "repetition_index": 5,
+      "cpu_energy_j": 416.0444626276908,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:24:31.904104",
+      "start_time": "2026-09-22T14:25:35.947384",
+      "end_time": "2026-09-22T14:26:12.551604",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 8,
+      "version": "a",
+      "repetition_index": 6,
+      "cpu_energy_j": 409.05959761400146,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:26:22.237510",
+      "start_time": "2026-09-22T14:27:21.726089",
+      "end_time": "2026-09-22T14:27:58.174252",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 9,
+      "version": "b",
+      "repetition_index": 2,
+      "cpu_energy_j": 458.66483420713257,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:29:54.385314",
+      "start_time": "2026-09-22T14:30:51.854128",
+      "end_time": "2026-09-22T14:31:27.729423",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_009/raw_cpu_20260922_142953.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 10,
+      "version": "a",
+      "repetition_index": 7,
+      "cpu_energy_j": 447.2344304829786,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:31:36.912213",
+      "start_time": "2026-09-22T14:32:37.300537",
+      "end_time": "2026-09-22T14:33:15.492975",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 11,
+      "version": "b",
+      "repetition_index": 3,
+      "cpu_energy_j": 472.81178241995354,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:33:25.191192",
+      "start_time": "2026-09-22T14:34:22.851056",
+      "end_time": "2026-09-22T14:34:59.369503",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 12,
+      "version": "b",
+      "repetition_index": 4,
+      "cpu_energy_j": 457.67443914427713,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:36:58.245970",
+      "start_time": "2026-09-22T14:38:03.063332",
+      "end_time": "2026-09-22T14:38:39.644080",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_012/raw_cpu_20260922_143657.csv covers 29 of the 41 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 13,
+      "version": "a",
+      "repetition_index": 8,
+      "cpu_energy_j": 410.49436684719393,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:38:49.382134",
+      "start_time": "2026-09-22T14:39:50.325921",
+      "end_time": "2026-09-22T14:40:28.460558",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 14,
+      "version": "a",
+      "repetition_index": 9,
+      "cpu_energy_j": 406.64254714534843,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:40:42.533331",
+      "start_time": "2026-09-22T14:41:47.071294",
+      "end_time": "2026-09-22T14:42:23.640403",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 15,
+      "version": "a",
+      "repetition_index": 10,
+      "cpu_energy_j": 409.6555611426948,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:42:32.793914",
+      "start_time": "2026-09-22T14:43:33.228915",
+      "end_time": "2026-09-22T14:44:09.809959",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 16,
+      "version": "b",
+      "repetition_index": 5,
+      "cpu_energy_j": 470.88737682116823,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:44:18.887266",
+      "start_time": "2026-09-22T14:45:19.404483",
+      "end_time": "2026-09-22T14:45:57.405806",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 17,
+      "version": "a",
+      "repetition_index": 11,
+      "cpu_energy_j": 412.63090390920047,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:46:06.761563",
+      "start_time": "2026-09-22T14:47:07.229739",
+      "end_time": "2026-09-22T14:47:45.466210",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 18,
+      "version": "a",
+      "repetition_index": 12,
+      "cpu_energy_j": 437.5959705942787,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:47:54.770389",
+      "start_time": "2026-09-22T14:48:51.981970",
+      "end_time": "2026-09-22T14:49:29.002328",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 19,
+      "version": "b",
+      "repetition_index": 6,
+      "cpu_energy_j": 463.79148664579316,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:49:38.852458",
+      "start_time": "2026-09-22T14:50:40.996488",
+      "end_time": "2026-09-22T14:51:18.849140",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 20,
+      "version": "a",
+      "repetition_index": 13,
+      "cpu_energy_j": 427.97752775832316,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:51:28.830072",
+      "start_time": "2026-09-22T14:52:25.431900",
+      "end_time": "2026-09-22T14:53:01.473193",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 21,
+      "version": "b",
+      "repetition_index": 7,
+      "cpu_energy_j": 468.22907580707005,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:53:11.394810",
+      "start_time": "2026-09-22T14:54:12.027831",
+      "end_time": "2026-09-22T14:54:49.137001",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 22,
+      "version": "b",
+      "repetition_index": 8,
+      "cpu_energy_j": 461.84586042196537,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T14:54:58.824377",
+      "start_time": "2026-09-22T14:55:58.453827",
+      "end_time": "2026-09-22T14:56:35.208118",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 23,
+      "version": "a",
+      "repetition_index": 14,
+      "cpu_energy_j": 395.7740254837496,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T14:56:44.811225",
+      "start_time": "2026-09-22T14:57:58.396451",
+      "end_time": "2026-09-22T14:58:34.144822",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 24,
+      "version": "a",
+      "repetition_index": 15,
+      "cpu_energy_j": 410.4567701583959,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T14:58:43.437953",
+      "start_time": "2026-09-22T14:59:43.514328",
+      "end_time": "2026-09-22T15:00:21.349070",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 25,
+      "version": "a",
+      "repetition_index": 16,
+      "cpu_energy_j": 395.4172797975257,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:02:18.961454",
+      "start_time": "2026-09-22T15:03:29.363402",
+      "end_time": "2026-09-22T15:04:05.704939",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_025/raw_cpu_20260922_150218.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 26,
+      "version": "b",
+      "repetition_index": 9,
+      "cpu_energy_j": 474.9016735614413,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:04:14.943849",
+      "start_time": "2026-09-22T15:05:14.818147",
+      "end_time": "2026-09-22T15:05:52.252935",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 27,
+      "version": "b",
+      "repetition_index": 10,
+      "cpu_energy_j": 474.75421931074305,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:09:35.084522",
+      "start_time": "2026-09-22T15:10:32.715120",
+      "end_time": "2026-09-22T15:11:09.417823",
+      "attempt_count": 2,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_027/raw_cpu_20260922_150749.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it; attempt 2 failed: validation failed: data/raw/10/slot_027/retry_1/raw_cpu_20260922_150934.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 28,
+      "version": "a",
+      "repetition_index": 17,
+      "cpu_energy_j": 424.7644496651797,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:11:19.224818",
+      "start_time": "2026-09-22T15:12:19.745211",
+      "end_time": "2026-09-22T15:12:57.355372",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 29,
+      "version": "b",
+      "repetition_index": 11,
+      "cpu_energy_j": 474.74082696354884,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:13:06.761198",
+      "start_time": "2026-09-22T15:14:03.305718",
+      "end_time": "2026-09-22T15:14:40.553794",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 30,
+      "version": "a",
+      "repetition_index": 18,
+      "cpu_energy_j": 415.10536973276135,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:14:50.289192",
+      "start_time": "2026-09-22T15:15:51.479215",
+      "end_time": "2026-09-22T15:16:27.871027",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 31,
+      "version": "a",
+      "repetition_index": 19,
+      "cpu_energy_j": 406.64828341500106,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:16:37.213168",
+      "start_time": "2026-09-22T15:17:38.237834",
+      "end_time": "2026-09-22T15:18:14.622140",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 32,
+      "version": "b",
+      "repetition_index": 12,
+      "cpu_energy_j": 475.3246983605271,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:18:24.057946",
+      "start_time": "2026-09-22T15:19:27.552365",
+      "end_time": "2026-09-22T15:20:04.485176",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 33,
+      "version": "b",
+      "repetition_index": 13,
+      "cpu_energy_j": 472.12681112137625,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:20:13.882790",
+      "start_time": "2026-09-22T15:21:14.013730",
+      "end_time": "2026-09-22T15:21:51.220898",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 34,
+      "version": "b",
+      "repetition_index": 14,
+      "cpu_energy_j": 466.3180084491097,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:23:47.146569",
+      "start_time": "2026-09-22T15:24:43.260791",
+      "end_time": "2026-09-22T15:25:19.394898",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_034/raw_cpu_20260922_152346.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 35,
+      "version": "b",
+      "repetition_index": 15,
+      "cpu_energy_j": 481.79942658635053,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:25:28.791026",
+      "start_time": "2026-09-22T15:26:28.568695",
+      "end_time": "2026-09-22T15:27:06.976105",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 36,
+      "version": "a",
+      "repetition_index": 20,
+      "cpu_energy_j": 424.2452771518252,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:27:16.097194",
+      "start_time": "2026-09-22T15:28:24.251895",
+      "end_time": "2026-09-22T15:29:02.354063",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 37,
+      "version": "a",
+      "repetition_index": 21,
+      "cpu_energy_j": 413.1529580598215,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:31:04.210323",
+      "start_time": "2026-09-22T15:32:04.890642",
+      "end_time": "2026-09-22T15:32:41.390298",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_037/raw_cpu_20260922_153103.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 38,
+      "version": "b",
+      "repetition_index": 16,
+      "cpu_energy_j": 447.8284115617437,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:32:51.003123",
+      "start_time": "2026-09-22T15:33:52.184699",
+      "end_time": "2026-09-22T15:34:28.810638",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 39,
+      "version": "a",
+      "repetition_index": 22,
+      "cpu_energy_j": 409.8128872026092,
+      "dram_energy_j": null,
+      "runtime_s": 40.0,
+      "measurement_started_at": "2026-09-22T15:34:38.107891",
+      "start_time": "2026-09-22T15:35:35.778513",
+      "end_time": "2026-09-22T15:36:14.007137",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 40,
+      "version": "a",
+      "repetition_index": 23,
+      "cpu_energy_j": 414.2468921482665,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:36:23.278292",
+      "start_time": "2026-09-22T15:37:23.732972",
+      "end_time": "2026-09-22T15:38:00.622481",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 41,
+      "version": "a",
+      "repetition_index": 24,
+      "cpu_energy_j": 427.29255939531566,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:39:55.036355",
+      "start_time": "2026-09-22T15:41:01.658371",
+      "end_time": "2026-09-22T15:41:37.654395",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/10/slot_041/raw_cpu_20260922_153954.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 42,
+      "version": "b",
+      "repetition_index": 17,
+      "cpu_energy_j": 469.8251602332737,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:41:46.999582",
+      "start_time": "2026-09-22T15:42:54.389768",
+      "end_time": "2026-09-22T15:43:32.185304",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 43,
+      "version": "b",
+      "repetition_index": 18,
+      "cpu_energy_j": 474.33098514797615,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:43:42.158315",
+      "start_time": "2026-09-22T15:44:42.660851",
+      "end_time": "2026-09-22T15:45:19.296624",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 44,
+      "version": "b",
+      "repetition_index": 19,
+      "cpu_energy_j": 473.79543917389384,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:45:28.600056",
+      "start_time": "2026-09-22T15:46:30.238846",
+      "end_time": "2026-09-22T15:47:08.485768",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 45,
+      "version": "a",
+      "repetition_index": 25,
+      "cpu_energy_j": 405.64336289045116,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:47:17.635958",
+      "start_time": "2026-09-22T15:48:22.316570",
+      "end_time": "2026-09-22T15:48:58.868157",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 46,
+      "version": "b",
+      "repetition_index": 20,
+      "cpu_energy_j": 463.066066833739,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:49:08.152029",
+      "start_time": "2026-09-22T15:50:04.824580",
+      "end_time": "2026-09-22T15:50:41.234624",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 47,
+      "version": "b",
+      "repetition_index": 21,
+      "cpu_energy_j": 465.3737846940696,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:50:50.639774",
+      "start_time": "2026-09-22T15:51:55.483833",
+      "end_time": "2026-09-22T15:52:31.953086",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 48,
+      "version": "b",
+      "repetition_index": 22,
+      "cpu_energy_j": 475.26408129432315,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:52:41.688576",
+      "start_time": "2026-09-22T15:53:39.806768",
+      "end_time": "2026-09-22T15:54:16.215716",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 49,
+      "version": "b",
+      "repetition_index": 23,
+      "cpu_energy_j": 472.03720538525124,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T15:54:25.623566",
+      "start_time": "2026-09-22T15:55:26.985289",
+      "end_time": "2026-09-22T15:56:04.637470",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 50,
+      "version": "a",
+      "repetition_index": 26,
+      "cpu_energy_j": 417.9177347184644,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T15:56:14.137038",
+      "start_time": "2026-09-22T15:57:11.499776",
+      "end_time": "2026-09-22T15:57:48.407441",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 51,
+      "version": "b",
+      "repetition_index": 24,
+      "cpu_energy_j": 467.91586502944847,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:57:58.055237",
+      "start_time": "2026-09-22T15:58:57.881949",
+      "end_time": "2026-09-22T15:59:33.935565",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 52,
+      "version": "a",
+      "repetition_index": 27,
+      "cpu_energy_j": 410.09107655083056,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T15:59:48.570616",
+      "start_time": "2026-09-22T16:00:45.647603",
+      "end_time": "2026-09-22T16:01:21.789346",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 53,
+      "version": "b",
+      "repetition_index": 25,
+      "cpu_energy_j": 465.151400183978,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T16:01:31.318479",
+      "start_time": "2026-09-22T16:02:31.771122",
+      "end_time": "2026-09-22T16:03:08.472277",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 54,
+      "version": "a",
+      "repetition_index": 28,
+      "cpu_energy_j": 405.8399897064511,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T16:03:18.402974",
+      "start_time": "2026-09-22T16:04:22.262659",
+      "end_time": "2026-09-22T16:04:58.677707",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 55,
+      "version": "a",
+      "repetition_index": 29,
+      "cpu_energy_j": 414.5980839158999,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T16:05:08.125537",
+      "start_time": "2026-09-22T16:06:08.927754",
+      "end_time": "2026-09-22T16:06:45.383335",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 56,
+      "version": "b",
+      "repetition_index": 26,
+      "cpu_energy_j": 452.61526037521566,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T16:06:54.891006",
+      "start_time": "2026-09-22T16:07:57.108944",
+      "end_time": "2026-09-22T16:08:34.948294",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 57,
+      "version": "b",
+      "repetition_index": 27,
+      "cpu_energy_j": 472.72022746768243,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T16:08:44.460500",
+      "start_time": "2026-09-22T16:09:44.866974",
+      "end_time": "2026-09-22T16:10:22.773284",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 58,
+      "version": "b",
+      "repetition_index": 28,
+      "cpu_energy_j": 453.0242966162907,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T16:10:32.338379",
+      "start_time": "2026-09-22T16:11:30.206143",
+      "end_time": "2026-09-22T16:12:06.092655",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 59,
+      "version": "b",
+      "repetition_index": 29,
+      "cpu_energy_j": 455.957005465481,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T16:12:15.426264",
+      "start_time": "2026-09-22T16:13:17.044805",
+      "end_time": "2026-09-22T16:13:53.774546",
+      "attempt_count": 0,
+      "validation_notes": null
+    }
+  ],
+  "thread_breakdown_containers": [
+    "inventree-worker",
+    "inventree-db",
+    "inventree-server",
+    "inventree-proxy"
+  ]
+}

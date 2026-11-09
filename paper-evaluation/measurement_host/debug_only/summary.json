@@ -1,0 +1,1135 @@
+{
+  "scenario_id": 2,
+  "comparison_session_id": 8,
+  "generated_at": "2026-10-23T06:51:37.392488+00:00",
+  "session_context": {
+    "execution_order": [
+      7,
+      7,
+      9,
+      7,
+      7,
+      9,
+      7,
+      7,
+      7,
+      9,
+      7,
+      9,
+      9,
+      7,
+      7,
+      7,
+      9,
+      7,
+      7,
+      9,
+      7,
+      9,
+      9,
+      7,
+      7,
+      7,
+      9,
+      9,
+      7,
+      9,
+      7,
+      7,
+      9,
+      9,
+      9,
+      9,
+      7,
+      7,
+      9,
+      7,
+      7,
+      7,
+      9,
+      9,
+      9,
+      7,
+      9,
+      9,
+      9,
+      9,
+      7,
+      9,
+      7,
+      9,
+      7,
+      7,
+      9,
+      9,
+      9,
+      9
+    ],
+    "random_seed": 20260922,
+    "idle_power_calibration": {
+      "package_0": 17.0379
+    },
+    "host_descriptor": "measurement_host",
+    "metrion_config_path": "/opt/metrion-runtime/config.yaml",
+    "cpu_governor": "performance",
+    "host_facts": {
+      "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+      "cpu_count": 24,
+      "ram_bytes": 65425850368,
+      "kernel_release": "7.0.0-31-generic",
+      "distro": "Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+      "virtualization": "none",
+      "rapl_domains": [
+        "intel-rapl",
+        "intel-rapl-mmio",
+        "intel-rapl-mmio:0",
+        "intel-rapl:0",
+        "intel-rapl:0:0",
+        "intel-rapl:0:1"
+      ],
+      "python_version": "3.12.13",
+      "docker_version": "Docker version 29.8.1, build 4a63305",
+      "metrion_version": "metrion-0.1.0",
+      "metrion_package_sha256": "0a7b4649340749c07007e6f98e2094c6670a9841096a3a081274b4738977221b"
+    }
+  },
+  "equivalence_check": {
+    "verdict": "PASS",
+    "notes": null,
+    "checked_at": "2026-09-22T09:40:19.459254"
+  },
+  "scenario_iterations": 3,
+  "step_order": [
+    "create_part",
+    "adjust_stock",
+    "browse_catalog",
+    "run_build_order"
+  ],
+  "versions": {
+    "a": {
+      "app_version_id": 7,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=False cache=True",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 3,
+      "n_noted": 3,
+      "started_at": "2026-09-22T09:43:20.511774",
+      "ended_at": "2026-09-22T11:35:13.049946",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 413.4928847117464,
+        "sd": 11.12977720075677,
+        "median": 413.43196462461793,
+        "min": 394.2737671280164,
+        "max": 435.4539074994484
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 37.666666666666664,
+        "sd": 0.6064784348631227
+      },
+      "container_breakdown": {
+        "inventree-db": 147.81471121807215,
+        "inventree-proxy": 6.430099558225737,
+        "inventree-cache": 3.4596561215921926,
+        "inventree-worker": 148.35798537617586,
+        "inventree-server": 107.43043243768054
+      },
+      "step_breakdown": {
+        "browse_catalog": 182.16425677651486,
+        "create_part": 87.3840843998174,
+        "adjust_stock": 95.37361747495791,
+        "run_build_order": 47.864432968355594
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 302.53956372779237,
+          "sd": 8.764005594339055
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 110.9533209839539,
+          "sd": 3.1676698751232624
+        },
+        "active_share": 0.7316681251690663,
+        "reconciles": true
+      }
+    },
+    "b": {
+      "app_version_id": 9,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=True cache=True",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 4,
+      "n_noted": 4,
+      "started_at": "2026-09-22T09:46:54.982598",
+      "ended_at": "2026-09-22T11:42:18.438985",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 422.41148427942414,
+        "sd": 9.904577911378357,
+        "median": 420.76162418588956,
+        "min": 400.91302100752165,
+        "max": 441.8094425876591
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 37.86666666666667,
+        "sd": 0.819307248726686
+      },
+      "container_breakdown": {
+        "inventree-db": 148.03350439180716,
+        "inventree-proxy": 6.458785878261364,
+        "inventree-cache": 3.4590625639362473,
+        "inventree-worker": 149.4792203522312,
+        "inventree-server": 114.9809110931881
+      },
+      "step_breakdown": {
+        "browse_catalog": 180.72804888260083,
+        "create_part": 84.33759444465856,
+        "adjust_stock": 105.48824687206357,
+        "run_build_order": 51.32979457465058
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 308.8606680476624,
+          "sd": 8.045248854605292
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 113.55081623176163,
+          "sd": 2.7026536287307965
+        },
+        "active_share": 0.7311843535090817,
+        "reconciles": true
+      }
+    }
+  },
+  "comparison": {
+    "baseline": "a",
+    "cpu_energy_j": {
+      "difference_j": 8.918599567677745,
+      "welch": {
+        "t": 3.2787447179888587,
+        "df": 57.22858841760267,
+        "p": 0.0017767533425909422,
+        "ci95_j": [
+          3.4721121944206814,
+          14.365086940934809
+        ]
+      },
+      "relative_difference": {
+        "percent": 2.1568931165272813,
+        "ci95_percent": [
+          0.8335645860601204,
+          3.5000054695359495
+        ],
+        "method": "fieller"
+      },
+      "mann_whitney_p": 0.0036708933924506537,
+      "order_adjusted": {
+        "difference_j": 7.778165552148408,
+        "ci95_j": [
+          2.188960177147359,
+          13.367370927149459
+        ]
+      }
+    },
+    "dram_energy_j": null,
+    "container_deltas": [
+      {
+        "role": "inventree-server",
+        "delta_j": 7.550478655507561,
+        "welch_ci95_j": [
+          4.096595705268997,
+          11.004361605746126
+        ]
+      },
+      {
+        "role": "inventree-worker",
+        "delta_j": 1.121234976055348,
+        "welch_ci95_j": [
+          -1.3253617431082265,
+          3.5678316952189224
+        ]
+      },
+      {
+        "role": "inventree-db",
+        "delta_j": 0.2187931737350084,
+        "welch_ci95_j": [
+          -1.724640125169617,
+          2.1622264726396336
+        ]
+      },
+      {
+        "role": "inventree-proxy",
+        "delta_j": 0.028686320035626878,
+        "welch_ci95_j": [
+          -0.08730876623259383,
+          0.14468140630384757
+        ]
+      },
+      {
+        "role": "inventree-cache",
+        "delta_j": -0.0005935576559452649,
+        "welch_ci95_j": [
+          -0.04038544966682364,
+          0.03919833435493311
+        ]
+      }
+    ],
+    "step_deltas": [
+      {
+        "step_id": "create_part",
+        "delta_j": -3.046489955158833
+      },
+      {
+        "step_id": "adjust_stock",
+        "delta_j": 10.11462939710566
+      },
+      {
+        "step_id": "browse_catalog",
+        "delta_j": -1.4362078939140304
+      },
+      {
+        "step_id": "run_build_order",
+        "delta_j": 3.4653616062949837
+      }
+    ]
+  },
+  "per_iteration": {
+    "iterations": [
+      1,
+      2,
+      3
+    ],
+    "a": {
+      "1": {
+        "n": 30,
+        "mean": 62.60470150277199,
+        "sd": 29.447544036932047
+      },
+      "2": {
+        "n": 30,
+        "mean": 230.4717109893231,
+        "sd": 32.91799154049321
+      },
+      "3": {
+        "n": 30,
+        "mean": 71.84554615919515,
+        "sd": 20.27750628723948
+      }
+    },
+    "b": {
+      "1": {
+        "n": 30,
+        "mean": 58.38281046287559,
+        "sd": 3.389096626353592
+      },
+      "2": {
+        "n": 30,
+        "mean": 244.52894552937718,
+        "sd": 21.46539292251355
+      },
+      "3": {
+        "n": 30,
+        "mean": 67.64213420707021,
+        "sd": 18.347194604888504
+      }
+    }
+  },
+  "repetitions": [
+    {
+      "slot": 0,
+      "version": "a",
+      "repetition_index": 0,
+      "cpu_energy_j": 435.4539074994484,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T09:43:20.513836",
+      "start_time": "2026-09-22T09:44:20.517673",
+      "end_time": "2026-09-22T09:44:58.899766",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 1,
+      "version": "a",
+      "repetition_index": 1,
+      "cpu_energy_j": 405.68221257451586,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T09:45:08.321236",
+      "start_time": "2026-09-22T09:46:08.884085",
+      "end_time": "2026-09-22T09:46:45.541261",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 2,
+      "version": "b",
+      "repetition_index": 0,
+      "cpu_energy_j": 409.5806265981878,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T09:46:54.983226",
+      "start_time": "2026-09-22T09:47:52.422279",
+      "end_time": "2026-09-22T09:48:28.880496",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 3,
+      "version": "a",
+      "repetition_index": 2,
+      "cpu_energy_j": 396.23451535760256,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T09:48:38.409506",
+      "start_time": "2026-09-22T09:49:36.059641",
+      "end_time": "2026-09-22T09:50:12.524716",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 4,
+      "version": "a",
+      "repetition_index": 3,
+      "cpu_energy_j": 409.07977881034344,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T09:50:21.788080",
+      "start_time": "2026-09-22T09:51:18.685153",
+      "end_time": "2026-09-22T09:51:55.577056",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 5,
+      "version": "b",
+      "repetition_index": 1,
+      "cpu_energy_j": 430.9952042097498,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T09:52:05.108139",
+      "start_time": "2026-09-22T09:53:05.362160",
+      "end_time": "2026-09-22T09:53:42.549385",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 6,
+      "version": "a",
+      "repetition_index": 4,
+      "cpu_energy_j": 423.27888100487877,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T09:53:52.169786",
+      "start_time": "2026-09-22T09:54:50.113845",
+      "end_time": "2026-09-22T09:55:26.868989",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 7,
+      "version": "a",
+      "repetition_index": 5,
+      "cpu_energy_j": 397.30286548618255,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T09:55:36.789166",
+      "start_time": "2026-09-22T09:56:36.934830",
+      "end_time": "2026-09-22T09:57:13.708574",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 8,
+      "version": "a",
+      "repetition_index": 6,
+      "cpu_energy_j": 399.3200383741257,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T09:57:23.285467",
+      "start_time": "2026-09-22T09:58:24.028294",
+      "end_time": "2026-09-22T09:59:00.850415",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 9,
+      "version": "b",
+      "repetition_index": 2,
+      "cpu_energy_j": 430.6276964061799,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T09:59:10.831154",
+      "start_time": "2026-09-22T10:00:11.796873",
+      "end_time": "2026-09-22T10:00:48.924847",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 10,
+      "version": "a",
+      "repetition_index": 7,
+      "cpu_energy_j": 416.88832443129627,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:00:58.387197",
+      "start_time": "2026-09-22T10:01:59.341306",
+      "end_time": "2026-09-22T10:02:36.514225",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 11,
+      "version": "b",
+      "repetition_index": 3,
+      "cpu_energy_j": 432.9241218921,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:02:46.150593",
+      "start_time": "2026-09-22T10:03:47.038175",
+      "end_time": "2026-09-22T10:04:24.188225",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 12,
+      "version": "b",
+      "repetition_index": 4,
+      "cpu_energy_j": 418.07022724788425,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T10:04:38.334461",
+      "start_time": "2026-09-22T10:05:39.646435",
+      "end_time": "2026-09-22T10:06:17.561934",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 13,
+      "version": "a",
+      "repetition_index": 8,
+      "cpu_energy_j": 398.7518058950562,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:06:27.643926",
+      "start_time": "2026-09-22T10:07:27.167042",
+      "end_time": "2026-09-22T10:08:03.321788",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 14,
+      "version": "a",
+      "repetition_index": 9,
+      "cpu_energy_j": 415.94218912769213,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:08:12.759947",
+      "start_time": "2026-09-22T10:09:19.287519",
+      "end_time": "2026-09-22T10:09:55.953286",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 15,
+      "version": "a",
+      "repetition_index": 10,
+      "cpu_energy_j": 414.74460867571446,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:11:48.524537",
+      "start_time": "2026-09-22T10:12:45.837742",
+      "end_time": "2026-09-22T10:13:22.410286",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_015/raw_cpu_20260922_101147.csv covers 30 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 16,
+      "version": "b",
+      "repetition_index": 5,
+      "cpu_energy_j": 413.0812524829119,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:15:18.425650",
+      "start_time": "2026-09-22T10:16:16.449936",
+      "end_time": "2026-09-22T10:16:52.841595",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_016/raw_cpu_20260922_101517.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 17,
+      "version": "a",
+      "repetition_index": 11,
+      "cpu_energy_j": 409.73867746458046,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:17:02.154951",
+      "start_time": "2026-09-22T10:17:59.162161",
+      "end_time": "2026-09-22T10:18:35.384725",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 18,
+      "version": "a",
+      "repetition_index": 12,
+      "cpu_energy_j": 407.89994727817884,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:18:45.080806",
+      "start_time": "2026-09-22T10:19:49.685692",
+      "end_time": "2026-09-22T10:20:25.496736",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 19,
+      "version": "b",
+      "repetition_index": 6,
+      "cpu_energy_j": 412.95464301779583,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:20:35.370357",
+      "start_time": "2026-09-22T10:21:32.333413",
+      "end_time": "2026-09-22T10:22:08.949508",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 20,
+      "version": "a",
+      "repetition_index": 13,
+      "cpu_energy_j": 417.170663299342,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T10:24:05.387802",
+      "start_time": "2026-09-22T10:25:05.950329",
+      "end_time": "2026-09-22T10:25:43.166424",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_020/raw_cpu_20260922_102404.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 21,
+      "version": "b",
+      "repetition_index": 7,
+      "cpu_energy_j": 413.0603264660962,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:25:52.655558",
+      "start_time": "2026-09-22T10:26:52.899826",
+      "end_time": "2026-09-22T10:27:29.224083",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 22,
+      "version": "b",
+      "repetition_index": 8,
+      "cpu_energy_j": 415.97562759713065,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T10:29:26.253162",
+      "start_time": "2026-09-22T10:30:27.001241",
+      "end_time": "2026-09-22T10:31:05.711472",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_022/raw_cpu_20260922_102925.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 23,
+      "version": "a",
+      "repetition_index": 14,
+      "cpu_energy_j": 408.6162478699166,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:33:00.993749",
+      "start_time": "2026-09-22T10:34:01.407810",
+      "end_time": "2026-09-22T10:34:38.091617",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_023/raw_cpu_20260922_103300.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 24,
+      "version": "a",
+      "repetition_index": 15,
+      "cpu_energy_j": 422.28330810577376,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:34:47.367639",
+      "start_time": "2026-09-22T10:35:45.289966",
+      "end_time": "2026-09-22T10:36:21.492518",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 25,
+      "version": "a",
+      "repetition_index": 16,
+      "cpu_energy_j": 423.6960070855809,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:36:31.034399",
+      "start_time": "2026-09-22T10:37:30.777334",
+      "end_time": "2026-09-22T10:38:07.770334",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 26,
+      "version": "b",
+      "repetition_index": 9,
+      "cpu_energy_j": 433.32580756547577,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:40:03.898869",
+      "start_time": "2026-09-22T10:41:04.897526",
+      "end_time": "2026-09-22T10:41:41.861902",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_026/raw_cpu_20260922_104002.csv covers 30 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 27,
+      "version": "b",
+      "repetition_index": 10,
+      "cpu_energy_j": 400.91302100752165,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:41:51.811953",
+      "start_time": "2026-09-22T10:42:52.399693",
+      "end_time": "2026-09-22T10:43:28.754706",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 28,
+      "version": "a",
+      "repetition_index": 17,
+      "cpu_energy_j": 399.43833645943295,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:43:38.029342",
+      "start_time": "2026-09-22T10:44:38.951356",
+      "end_time": "2026-09-22T10:45:15.335189",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 29,
+      "version": "b",
+      "repetition_index": 11,
+      "cpu_energy_j": 420.82044987875156,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:45:24.591810",
+      "start_time": "2026-09-22T10:46:24.843044",
+      "end_time": "2026-09-22T10:47:01.347150",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 30,
+      "version": "a",
+      "repetition_index": 18,
+      "cpu_energy_j": 404.04308925039396,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:47:10.844330",
+      "start_time": "2026-09-22T10:48:11.333078",
+      "end_time": "2026-09-22T10:48:47.772589",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 31,
+      "version": "a",
+      "repetition_index": 19,
+      "cpu_energy_j": 413.95386466594726,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:48:57.269662",
+      "start_time": "2026-09-22T10:50:02.793887",
+      "end_time": "2026-09-22T10:50:38.620454",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 32,
+      "version": "b",
+      "repetition_index": 12,
+      "cpu_energy_j": 419.05846856426615,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:50:48.129168",
+      "start_time": "2026-09-22T10:51:49.208977",
+      "end_time": "2026-09-22T10:52:26.323394",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 33,
+      "version": "b",
+      "repetition_index": 13,
+      "cpu_energy_j": 416.98923118458674,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:52:35.724044",
+      "start_time": "2026-09-22T10:53:36.452463",
+      "end_time": "2026-09-22T10:54:12.895808",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 34,
+      "version": "b",
+      "repetition_index": 14,
+      "cpu_energy_j": 418.29610643853573,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T10:56:11.409031",
+      "start_time": "2026-09-22T10:57:12.289441",
+      "end_time": "2026-09-22T10:57:48.707490",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/8/slot_034/raw_cpu_20260922_105610.csv covers 29 of the 39 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 35,
+      "version": "b",
+      "repetition_index": 15,
+      "cpu_energy_j": 411.03594199480926,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:57:58.320856",
+      "start_time": "2026-09-22T10:58:56.083575",
+      "end_time": "2026-09-22T10:59:33.158319",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 36,
+      "version": "a",
+      "repetition_index": 20,
+      "cpu_energy_j": 425.7362473510362,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T10:59:42.607407",
+      "start_time": "2026-09-22T11:00:42.284953",
+      "end_time": "2026-09-22T11:01:19.128527",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 37,
+      "version": "a",
+      "repetition_index": 21,
+      "cpu_energy_j": 428.3264902990682,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:01:28.866519",
+      "start_time": "2026-09-22T11:02:29.422434",
+      "end_time": "2026-09-22T11:03:06.262912",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 38,
+      "version": "b",
+      "repetition_index": 16,
+      "cpu_energy_j": 430.59987448151503,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:03:15.761911",
+      "start_time": "2026-09-22T11:04:15.634527",
+      "end_time": "2026-09-22T11:04:52.528815",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 39,
+      "version": "a",
+      "repetition_index": 22,
+      "cpu_energy_j": 424.6372734260488,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:05:02.226640",
+      "start_time": "2026-09-22T11:06:02.611802",
+      "end_time": "2026-09-22T11:06:39.393271",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 40,
+      "version": "a",
+      "repetition_index": 23,
+      "cpu_energy_j": 420.33260068851246,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:06:49.186409",
+      "start_time": "2026-09-22T11:07:49.635223",
+      "end_time": "2026-09-22T11:08:26.576565",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 41,
+      "version": "a",
+      "repetition_index": 24,
+      "cpu_energy_j": 419.5145797603505,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:08:35.960527",
+      "start_time": "2026-09-22T11:09:33.663656",
+      "end_time": "2026-09-22T11:10:09.667283",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 42,
+      "version": "b",
+      "repetition_index": 17,
+      "cpu_energy_j": 420.7027984930276,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:10:19.047934",
+      "start_time": "2026-09-22T11:11:19.905653",
+      "end_time": "2026-09-22T11:11:56.984571",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 43,
+      "version": "b",
+      "repetition_index": 18,
+      "cpu_energy_j": 432.4616055157286,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:12:06.736856",
+      "start_time": "2026-09-22T11:13:07.557060",
+      "end_time": "2026-09-22T11:13:44.594398",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 44,
+      "version": "b",
+      "repetition_index": 19,
+      "cpu_energy_j": 435.1556796264935,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:13:54.149563",
+      "start_time": "2026-09-22T11:14:54.627201",
+      "end_time": "2026-09-22T11:15:31.686899",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 45,
+      "version": "a",
+      "repetition_index": 25,
+      "cpu_energy_j": 434.3929253439869,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:15:41.230491",
+      "start_time": "2026-09-22T11:16:39.598193",
+      "end_time": "2026-09-22T11:17:16.867092",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 46,
+      "version": "b",
+      "repetition_index": 20,
+      "cpu_energy_j": 441.8094425876591,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T11:17:26.412685",
+      "start_time": "2026-09-22T11:18:27.049226",
+      "end_time": "2026-09-22T11:19:05.292171",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 47,
+      "version": "b",
+      "repetition_index": 21,
+      "cpu_energy_j": 433.5130860107092,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:19:14.250025",
+      "start_time": "2026-09-22T11:20:15.211350",
+      "end_time": "2026-09-22T11:20:51.959467",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 48,
+      "version": "b",
+      "repetition_index": 22,
+      "cpu_energy_j": 420.9001820209996,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T11:21:01.329641",
+      "start_time": "2026-09-22T11:22:02.146497",
+      "end_time": "2026-09-22T11:22:40.313697",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 49,
+      "version": "b",
+      "repetition_index": 23,
+      "cpu_energy_j": 423.75246693043624,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T11:22:49.535882",
+      "start_time": "2026-09-22T11:23:50.373860",
+      "end_time": "2026-09-22T11:24:28.483233",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 50,
+      "version": "a",
+      "repetition_index": 26,
+      "cpu_energy_j": 394.2737671280164,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:24:42.627517",
+      "start_time": "2026-09-22T11:25:40.194329",
+      "end_time": "2026-09-22T11:26:16.976671",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 51,
+      "version": "b",
+      "repetition_index": 24,
+      "cpu_energy_j": 430.5285592645697,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:26:26.473510",
+      "start_time": "2026-09-22T11:27:26.853998",
+      "end_time": "2026-09-22T11:28:02.684295",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 52,
+      "version": "a",
+      "repetition_index": 27,
+      "cpu_energy_j": 412.6759494629981,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:28:12.120064",
+      "start_time": "2026-09-22T11:29:09.701288",
+      "end_time": "2026-09-22T11:29:46.936852",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 53,
+      "version": "b",
+      "repetition_index": 25,
+      "cpu_energy_j": 422.9794183396033,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:29:56.472918",
+      "start_time": "2026-09-22T11:30:57.157985",
+      "end_time": "2026-09-22T11:31:33.996781",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 54,
+      "version": "a",
+      "repetition_index": 28,
+      "cpu_energy_j": 412.9100645832886,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:31:43.437451",
+      "start_time": "2026-09-22T11:32:43.498368",
+      "end_time": "2026-09-22T11:33:20.017090",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 55,
+      "version": "a",
+      "repetition_index": 29,
+      "cpu_energy_j": 412.4673745930846,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:33:29.254472",
+      "start_time": "2026-09-22T11:34:26.933461",
+      "end_time": "2026-09-22T11:35:03.452887",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 56,
+      "version": "b",
+      "repetition_index": 26,
+      "cpu_energy_j": 416.1256540715806,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:35:13.055059",
+      "start_time": "2026-09-22T11:36:10.727090",
+      "end_time": "2026-09-22T11:36:47.452068",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 57,
+      "version": "b",
+      "repetition_index": 27,
+      "cpu_energy_j": 413.2309035136197,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:36:57.037855",
+      "start_time": "2026-09-22T11:37:57.163398",
+      "end_time": "2026-09-22T11:38:33.929394",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 58,
+      "version": "b",
+      "repetition_index": 28,
+      "cpu_energy_j": 414.7303262114793,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:38:43.500105",
+      "start_time": "2026-09-22T11:39:44.508173",
+      "end_time": "2026-09-22T11:40:20.968536",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 59,
+      "version": "b",
+      "repetition_index": 29,
+      "cpu_energy_j": 438.1457787633179,
+      "dram_energy_j": null,
+      "runtime_s": 40.0,
+      "measurement_started_at": "2026-09-22T11:40:30.356226",
+      "start_time": "2026-09-22T11:41:30.918934",
+      "end_time": "2026-09-22T11:42:09.383911",
+      "attempt_count": 0,
+      "validation_notes": null
+    }
+  ],
+  "thread_breakdown_containers": [
+    "inventree-worker",
+    "inventree-db",
+    "inventree-server",
+    "inventree-proxy"
+  ]
+}

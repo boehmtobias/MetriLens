@@ -1,0 +1,88 @@
+# MetriLens's own small config file.
+# Copy to config.yaml (gitignored, machine-specific) and fill in the real values.
+
+# Absolute path to the `metrion` binary. Prefer a root-owned copy of METRION's
+# venv over its own dev venv directly: sudoers grants passwordless root to run this
+# path, so if it's writable by the account invoking sudo, that account can trivially
+# get root through it.
+metrion_binary_path: /path/to/Metrion/.venv/bin/metrion
+
+# METRION's own config.yaml, passed as `metrion monitor -c <path>`; also the value
+# recorded on `comparison_session.metrion_config_path` for provenance.
+metrion_config_path: /path/to/Metrion/configs/config.yaml
+
+# Where `metrion analyze --export-*` writes its output; fixed by METRION's own
+# installation, not something its CLI call can redirect.
+metrion_output_dir: /path/to/Metrion/metrion/energy_attribution/output
+
+# METRION's own cached RAPL idle-power calibration log; MetriLens deletes this to
+# force a fresh calibration through METRION's CLI rather than its internals.
+metrion_idle_log_path: /path/to/Metrion/metrion/discovery/system_scanner/bare_metal/linux/log/rapl-idle.log
+
+# Directory `metrion monitor` writes its database into: the parent of METRION's
+# `general.database.path`. A directory, since with `debug: true` METRION timestamps
+# each database's filename. Keep it outside METRION's install root, somewhere the
+# measurement account owns.
+metrion_db_dir: /path/to/metrion-data
+
+# Optional. Script `sudo` runs to delete METRION's leftover `/tmp/batch_*.ipc` files.
+# Defaults to this checkout's `scripts/cleanup_orphan_batch_files.py`. If any other
+# account can write the checkout, point this at a root-owned copy, since root runs it.
+# batch_cleanup_script_path: /opt/metrion-runtime/bin/cleanup_orphan_batch_files.py
+
+# Optional. Wrapper `sudo` runs instead of `metrion analyze`; same default and same
+# caveat as above. The wrapper hardcodes the database directory it accepts, so
+# `metrion_db_dir` must match the installed wrapper's `DB_ROOT`.
+# analyze_wrapper_path: /opt/metrion-runtime/bin/metrion_analyze.py
+
+# Where this machine keeps the target app's Compose projects. A scenario's
+# `app_versions.yaml` gives `compose_file` relative to this, so that tracked file
+# stays machine-independent. Optional: without it, those entries must be absolute.
+# stacks_dir: /path/to/stacks
+
+# Orchestrator auto-retry bound for a failing repetition.
+max_retries: 3
+
+# Readiness timeout in seconds, applied to each readiness layer (compose
+# healthchecks, the HTTP poll, the optional login). Not the reset script itself
+# (see reset_timeout_s below).
+readiness_timeout_s: 60
+
+# Timeout for a version's full reset_script, in seconds: compose down/up plus that
+# script's own migration-wait loop and seed data, not just an HTTP poll, so this
+# needs real headroom.
+reset_timeout_s: 240
+
+# How long to let the machine settle after the pre-flight dry runs before forcing
+# the session's idle-power calibration, in seconds.
+settle_time_s: 60
+
+# How long to keep `metrion monitor` running after the scenario script exits, in
+# seconds. The measured window's end is rounded up to a whole second, so it can fall
+# after the script exits; without this tail that last second could hold no samples.
+monitor_tail_wait_s: 3.0
+
+# How long `metrion monitor` gets to exit after SIGINT before it is killed, in
+# seconds. Depends on how long METRION takes to flush its database, so tune it per
+# host. A killed stop does not lose the repetition by itself: the export's coverage
+# check decides whether the measured window is complete.
+monitor_stop_timeout_s: 90.0
+
+# Optional third readiness layer: one real login before the stack counts as ready.
+# Without it readiness stops at the HTTP poll, and since a freshly reset app can
+# answer health_url before its login works, the scenario's own login fails more often.
+#
+# Paths are relative to the origin of each app_version's health_url, so one block
+# serves every app version of a scenario. The values below are InvenTree's.
+#
+# username_env/password_env name environment variables, resolved from the
+# environment or .env at probe time (see .env.example); credentials are not stored here.
+readiness_auth:
+  login_page_path: /web/login             # GET first, to be issued the CSRF cookie
+  login_path: /api/auth/v1/auth/login     # POST the credentials
+  session_path: /api/user/me/             # must answer 200 before the stack counts as ready
+  username_env: INVENTREE_ADMIN_USER
+  password_env: INVENTREE_ADMIN_PASSWORD
+  # Defaults are Django's own names; uncomment only for an app that differs.
+  # csrf_cookie_name: csrftoken
+  # csrf_header_name: X-CSRFToken

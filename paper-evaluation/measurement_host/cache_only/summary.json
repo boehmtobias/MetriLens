@@ -1,0 +1,1135 @@
+{
+  "scenario_id": 2,
+  "comparison_session_id": 9,
+  "generated_at": "2026-10-23T06:51:47.925663+00:00",
+  "session_context": {
+    "execution_order": [
+      7,
+      7,
+      10,
+      7,
+      7,
+      10,
+      7,
+      7,
+      7,
+      10,
+      7,
+      10,
+      10,
+      7,
+      7,
+      7,
+      10,
+      7,
+      7,
+      10,
+      7,
+      10,
+      10,
+      7,
+      7,
+      7,
+      10,
+      10,
+      7,
+      10,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10,
+      7,
+      7,
+      10,
+      7,
+      7,
+      7,
+      10,
+      10,
+      10,
+      7,
+      10,
+      10,
+      10,
+      10,
+      7,
+      10,
+      7,
+      10,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10
+    ],
+    "random_seed": 20260922,
+    "idle_power_calibration": {
+      "package_0": 17.1528
+    },
+    "host_descriptor": "measurement_host",
+    "metrion_config_path": "/opt/metrion-runtime/config.yaml",
+    "cpu_governor": "performance",
+    "host_facts": {
+      "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+      "cpu_count": 24,
+      "ram_bytes": 65425850368,
+      "kernel_release": "7.0.0-31-generic",
+      "distro": "Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+      "virtualization": "none",
+      "rapl_domains": [
+        "intel-rapl",
+        "intel-rapl-mmio",
+        "intel-rapl-mmio:0",
+        "intel-rapl:0",
+        "intel-rapl:0:0",
+        "intel-rapl:0:1"
+      ],
+      "python_version": "3.12.13",
+      "docker_version": "Docker version 29.8.1, build 4a63305",
+      "metrion_version": "metrion-0.1.0",
+      "metrion_package_sha256": "0a7b4649340749c07007e6f98e2094c6670a9841096a3a081274b4738977221b"
+    }
+  },
+  "equivalence_check": {
+    "verdict": "PASS",
+    "notes": null,
+    "checked_at": "2026-09-22T11:50:05.053265"
+  },
+  "scenario_iterations": 3,
+  "step_order": [
+    "create_part",
+    "adjust_stock",
+    "browse_catalog",
+    "run_build_order"
+  ],
+  "versions": {
+    "a": {
+      "app_version_id": 7,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=False cache=True",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 2,
+      "n_noted": 2,
+      "started_at": "2026-09-22T11:53:06.002409",
+      "ended_at": "2026-09-22T13:47:05.475162",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 414.2490230361993,
+        "sd": 9.132197669610322,
+        "median": 414.153888687001,
+        "min": 393.17856551335814,
+        "max": 431.41197744761206
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 37.5,
+        "sd": 0.682288239221013
+      },
+      "container_breakdown": {
+        "inventree-worker": 148.09033693727707,
+        "inventree-proxy": 6.48582043295571,
+        "inventree-cache": 3.4860163092599046,
+        "inventree-server": 108.13517612834181,
+        "inventree-db": 148.0516732283648
+      },
+      "step_breakdown": {
+        "browse_catalog": 188.19437798992303,
+        "run_build_order": 47.3222063343686,
+        "create_part": 85.03114084373533,
+        "adjust_stock": 92.96761737620982
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 301.7638583381783,
+          "sd": 7.247199012454017
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 112.48516469802097,
+          "sd": 2.2954229068520386
+        },
+        "active_share": 0.7284600362516936,
+        "reconciles": true
+      }
+    },
+    "b": {
+      "app_version_id": 10,
+      "label": "InvenTree 1.4.2 Session Flow DEBUG=False cache=False",
+      "n_scheduled": 30,
+      "n_ok": 30,
+      "n_retried": 7,
+      "n_noted": 7,
+      "started_at": "2026-09-22T11:56:32.096139",
+      "ended_at": "2026-09-22T13:58:38.312157",
+      "cpu_energy_j": {
+        "n": 30,
+        "mean": 461.51203137097497,
+        "sd": 10.654138366873152,
+        "median": 463.04063823055867,
+        "min": 439.8084930052807,
+        "max": 480.8971407387826
+      },
+      "dram_energy_j": null,
+      "runtime_s": {
+        "n": 30,
+        "mean": 37.93333333333333,
+        "sd": 0.5832922809856746
+      },
+      "container_breakdown": {
+        "inventree-worker": 176.00243345434112,
+        "inventree-proxy": 6.250283771325817,
+        "inventree-cache": 1.3497615743914113,
+        "inventree-server": 110.68251474365151,
+        "inventree-db": 167.2270378272651
+      },
+      "step_breakdown": {
+        "browse_catalog": 167.57954160358983,
+        "run_build_order": 51.16718741680491,
+        "create_part": 133.99604160002957,
+        "adjust_stock": 107.83532541272676
+      },
+      "energy_split": {
+        "n_repetitions": 30,
+        "active_j": {
+          "n": 30,
+          "mean": 335.35299365275114,
+          "sd": 7.923946690029441
+        },
+        "idle_j": {
+          "n": 30,
+          "mean": 126.15903771822367,
+          "sd": 3.4274719148937884
+        },
+        "active_share": 0.7266397642040799,
+        "reconciles": true
+      }
+    }
+  },
+  "comparison": {
+    "baseline": "a",
+    "cpu_energy_j": {
+      "difference_j": 47.26300833477569,
+      "welch": {
+        "t": 18.448057373817406,
+        "df": 56.6744737718444,
+        "p": 1.256042620182689e-25,
+        "ci95_j": [
+          42.13215241496915,
+          52.39386425458223
+        ]
+      },
+      "relative_difference": {
+        "percent": 11.409322824316135,
+        "ci95_percent": [
+          10.11617971666421,
+          12.716944456710744
+        ],
+        "method": "fieller"
+      },
+      "mann_whitney_p": 3.0198593591621564e-11,
+      "order_adjusted": {
+        "difference_j": 47.7065811889142,
+        "ci95_j": [
+          42.35380267774444,
+          53.05935970008396
+        ]
+      }
+    },
+    "dram_energy_j": null,
+    "container_deltas": [
+      {
+        "role": "inventree-worker",
+        "delta_j": 27.912096517064043,
+        "welch_ci95_j": [
+          25.612281979431998,
+          30.21191105469609
+        ]
+      },
+      {
+        "role": "inventree-db",
+        "delta_j": 19.175364598900302,
+        "welch_ci95_j": [
+          17.395966628637005,
+          20.9547625691636
+        ]
+      },
+      {
+        "role": "inventree-server",
+        "delta_j": 2.547338615309698,
+        "welch_ci95_j": [
+          -1.5913004083025548,
+          6.685977638921951
+        ]
+      },
+      {
+        "role": "inventree-proxy",
+        "delta_j": -0.23553666162989284,
+        "welch_ci95_j": [
+          -0.3900552149041133,
+          -0.08101810835567239
+        ]
+      },
+      {
+        "role": "inventree-cache",
+        "delta_j": -2.1362547348684933,
+        "welch_ci95_j": [
+          -2.1659019524235807,
+          -2.106607517313406
+        ]
+      }
+    ],
+    "step_deltas": [
+      {
+        "step_id": "create_part",
+        "delta_j": 48.96490075629424
+      },
+      {
+        "step_id": "adjust_stock",
+        "delta_j": 14.867708036516945
+      },
+      {
+        "step_id": "browse_catalog",
+        "delta_j": -20.614836386333195
+      },
+      {
+        "step_id": "run_build_order",
+        "delta_j": 3.8449810824363055
+      }
+    ]
+  },
+  "per_iteration": {
+    "iterations": [
+      1,
+      2,
+      3
+    ],
+    "a": {
+      "1": {
+        "n": 30,
+        "mean": 58.41076560012593,
+        "sd": 15.809562748313082
+      },
+      "2": {
+        "n": 30,
+        "mean": 224.41673007892118,
+        "sd": 35.1273845928085
+      },
+      "3": {
+        "n": 30,
+        "mean": 83.36564053082105,
+        "sd": 35.46186096943587
+      }
+    },
+    "b": {
+      "1": {
+        "n": 30,
+        "mean": 66.72431067956954,
+        "sd": 22.719554594965604
+      },
+      "2": {
+        "n": 30,
+        "mean": 175.54612156297625,
+        "sd": 32.79990555783071
+      },
+      "3": {
+        "n": 30,
+        "mean": 167.14047637380028,
+        "sd": 50.89654823357445
+      }
+    }
+  },
+  "repetitions": [
+    {
+      "slot": 0,
+      "version": "a",
+      "repetition_index": 0,
+      "cpu_energy_j": 402.62407165991806,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:53:06.003668",
+      "start_time": "2026-09-22T11:54:02.874693",
+      "end_time": "2026-09-22T11:54:39.559387",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 1,
+      "version": "a",
+      "repetition_index": 1,
+      "cpu_energy_j": 402.5561314657122,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:54:49.062930",
+      "start_time": "2026-09-22T11:55:46.078475",
+      "end_time": "2026-09-22T11:56:22.886350",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 2,
+      "version": "b",
+      "repetition_index": 0,
+      "cpu_energy_j": 468.57913448611737,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T11:56:32.096738",
+      "start_time": "2026-09-22T11:57:32.171388",
+      "end_time": "2026-09-22T11:58:08.311091",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 3,
+      "version": "a",
+      "repetition_index": 2,
+      "cpu_energy_j": 431.41197744761206,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T11:58:17.998166",
+      "start_time": "2026-09-22T11:59:17.936075",
+      "end_time": "2026-09-22T11:59:54.865690",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 4,
+      "version": "a",
+      "repetition_index": 3,
+      "cpu_energy_j": 414.8063414969167,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T12:00:04.154313",
+      "start_time": "2026-09-22T12:01:04.528929",
+      "end_time": "2026-09-22T12:01:42.377709",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 5,
+      "version": "b",
+      "repetition_index": 1,
+      "cpu_energy_j": 445.37873113669,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:01:51.758975",
+      "start_time": "2026-09-22T12:02:56.763016",
+      "end_time": "2026-09-22T12:03:33.013132",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 6,
+      "version": "a",
+      "repetition_index": 4,
+      "cpu_energy_j": 417.77874456346973,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:03:42.462050",
+      "start_time": "2026-09-22T12:04:42.940195",
+      "end_time": "2026-09-22T12:05:19.059838",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 7,
+      "version": "a",
+      "repetition_index": 5,
+      "cpu_energy_j": 422.08909739643303,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:05:28.351918",
+      "start_time": "2026-09-22T12:06:29.168635",
+      "end_time": "2026-09-22T12:07:05.661175",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 8,
+      "version": "a",
+      "repetition_index": 6,
+      "cpu_energy_j": 422.2803040732823,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:10:52.104447",
+      "start_time": "2026-09-22T12:11:48.922541",
+      "end_time": "2026-09-22T12:12:25.590316",
+      "attempt_count": 2,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_008/raw_cpu_20260922_120906.csv covers 30 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it; attempt 2 failed: validation failed: data/raw/9/slot_008/retry_1/raw_cpu_20260922_121051.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 9,
+      "version": "b",
+      "repetition_index": 2,
+      "cpu_energy_j": 453.12040435399814,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:12:34.860904",
+      "start_time": "2026-09-22T12:13:34.347749",
+      "end_time": "2026-09-22T12:14:11.552899",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 10,
+      "version": "a",
+      "repetition_index": 7,
+      "cpu_energy_j": 414.3577550783594,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:14:26.479740",
+      "start_time": "2026-09-22T12:15:23.485521",
+      "end_time": "2026-09-22T12:16:00.198960",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 11,
+      "version": "b",
+      "repetition_index": 3,
+      "cpu_energy_j": 463.45964283450775,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T12:17:57.106003",
+      "start_time": "2026-09-22T12:18:56.907478",
+      "end_time": "2026-09-22T12:19:34.444780",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_011/raw_cpu_20260922_121756.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 12,
+      "version": "b",
+      "repetition_index": 4,
+      "cpu_energy_j": 473.44678735980114,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:19:43.933454",
+      "start_time": "2026-09-22T12:20:50.603195",
+      "end_time": "2026-09-22T12:21:27.451340",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 13,
+      "version": "a",
+      "repetition_index": 8,
+      "cpu_energy_j": 408.1130243831308,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:23:21.154835",
+      "start_time": "2026-09-22T12:24:21.021002",
+      "end_time": "2026-09-22T12:24:57.663578",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_013/raw_cpu_20260922_122320.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 14,
+      "version": "a",
+      "repetition_index": 9,
+      "cpu_energy_j": 411.6472655604835,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:25:07.751872",
+      "start_time": "2026-09-22T12:26:08.238355",
+      "end_time": "2026-09-22T12:26:45.107796",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 15,
+      "version": "a",
+      "repetition_index": 10,
+      "cpu_energy_j": 412.60461177921843,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:26:54.343113",
+      "start_time": "2026-09-22T12:27:54.229288",
+      "end_time": "2026-09-22T12:28:30.618061",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 16,
+      "version": "b",
+      "repetition_index": 5,
+      "cpu_energy_j": 473.90494953336696,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:28:39.822848",
+      "start_time": "2026-09-22T12:29:39.978007",
+      "end_time": "2026-09-22T12:30:16.769576",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 17,
+      "version": "a",
+      "repetition_index": 11,
+      "cpu_energy_j": 408.34779347986307,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:30:26.506152",
+      "start_time": "2026-09-22T12:31:27.053898",
+      "end_time": "2026-09-22T12:32:03.679573",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 18,
+      "version": "a",
+      "repetition_index": 12,
+      "cpu_energy_j": 418.2387858397801,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:32:13.268313",
+      "start_time": "2026-09-22T12:33:13.991995",
+      "end_time": "2026-09-22T12:33:50.523625",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 19,
+      "version": "b",
+      "repetition_index": 6,
+      "cpu_energy_j": 454.61491057410205,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:33:59.918329",
+      "start_time": "2026-09-22T12:34:57.235903",
+      "end_time": "2026-09-22T12:35:33.780382",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 20,
+      "version": "a",
+      "repetition_index": 13,
+      "cpu_energy_j": 408.33697919032164,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:35:43.274062",
+      "start_time": "2026-09-22T12:36:43.901452",
+      "end_time": "2026-09-22T12:37:20.487901",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 21,
+      "version": "b",
+      "repetition_index": 7,
+      "cpu_energy_j": 465.23486397853344,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:39:13.328062",
+      "start_time": "2026-09-22T12:40:09.154249",
+      "end_time": "2026-09-22T12:40:46.308731",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_021/raw_cpu_20260922_123912.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 22,
+      "version": "b",
+      "repetition_index": 8,
+      "cpu_energy_j": 471.50310624657243,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:41:00.733757",
+      "start_time": "2026-09-22T12:42:00.407998",
+      "end_time": "2026-09-22T12:42:37.534165",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 23,
+      "version": "a",
+      "repetition_index": 14,
+      "cpu_energy_j": 423.384716309191,
+      "dram_energy_j": null,
+      "runtime_s": 36.0,
+      "measurement_started_at": "2026-09-22T12:42:47.276902",
+      "start_time": "2026-09-22T12:43:45.162729",
+      "end_time": "2026-09-22T12:44:20.776096",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 24,
+      "version": "a",
+      "repetition_index": 15,
+      "cpu_energy_j": 411.93412465944994,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:44:30.019423",
+      "start_time": "2026-09-22T12:45:27.101804",
+      "end_time": "2026-09-22T12:46:03.494460",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 25,
+      "version": "a",
+      "repetition_index": 16,
+      "cpu_energy_j": 415.82281183279923,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:46:13.031840",
+      "start_time": "2026-09-22T12:47:09.943275",
+      "end_time": "2026-09-22T12:47:45.790568",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 26,
+      "version": "b",
+      "repetition_index": 9,
+      "cpu_energy_j": 472.4623833940535,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:47:55.327221",
+      "start_time": "2026-09-22T12:48:59.812617",
+      "end_time": "2026-09-22T12:49:36.002848",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 27,
+      "version": "b",
+      "repetition_index": 10,
+      "cpu_energy_j": 439.8084930052807,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T12:49:45.599866",
+      "start_time": "2026-09-22T12:50:50.707348",
+      "end_time": "2026-09-22T12:51:26.628178",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 28,
+      "version": "a",
+      "repetition_index": 17,
+      "cpu_energy_j": 419.4828013477618,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:51:35.971543",
+      "start_time": "2026-09-22T12:52:36.000649",
+      "end_time": "2026-09-22T12:53:13.916267",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 29,
+      "version": "b",
+      "repetition_index": 11,
+      "cpu_energy_j": 453.4098547841162,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:53:23.106022",
+      "start_time": "2026-09-22T12:54:20.089482",
+      "end_time": "2026-09-22T12:54:57.356635",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 30,
+      "version": "a",
+      "repetition_index": 18,
+      "cpu_energy_j": 419.1615209055268,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:55:06.967066",
+      "start_time": "2026-09-22T12:56:07.534349",
+      "end_time": "2026-09-22T12:56:44.208934",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 31,
+      "version": "a",
+      "repetition_index": 19,
+      "cpu_energy_j": 426.19196387169166,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:56:53.761615",
+      "start_time": "2026-09-22T12:57:57.242985",
+      "end_time": "2026-09-22T12:58:34.321602",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 32,
+      "version": "b",
+      "repetition_index": 12,
+      "cpu_energy_j": 478.09739284202817,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T12:58:43.768405",
+      "start_time": "2026-09-22T12:59:43.515264",
+      "end_time": "2026-09-22T13:00:20.631082",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 33,
+      "version": "b",
+      "repetition_index": 13,
+      "cpu_energy_j": 466.6750844708413,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:00:35.007021",
+      "start_time": "2026-09-22T13:01:36.326654",
+      "end_time": "2026-09-22T13:02:13.224235",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 34,
+      "version": "b",
+      "repetition_index": 14,
+      "cpu_energy_j": 443.8407492379852,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:02:22.571695",
+      "start_time": "2026-09-22T13:03:19.593632",
+      "end_time": "2026-09-22T13:03:55.934265",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 35,
+      "version": "b",
+      "repetition_index": 15,
+      "cpu_energy_j": 472.8922869059647,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:04:05.123168",
+      "start_time": "2026-09-22T13:05:05.097689",
+      "end_time": "2026-09-22T13:05:41.263987",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 36,
+      "version": "a",
+      "repetition_index": 20,
+      "cpu_energy_j": 408.90697829881896,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:05:50.902957",
+      "start_time": "2026-09-22T13:06:54.494996",
+      "end_time": "2026-09-22T13:07:30.652882",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 37,
+      "version": "a",
+      "repetition_index": 21,
+      "cpu_energy_j": 413.95002229564255,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:07:40.153224",
+      "start_time": "2026-09-22T13:08:39.454557",
+      "end_time": "2026-09-22T13:09:15.905086",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 38,
+      "version": "b",
+      "repetition_index": 16,
+      "cpu_energy_j": 460.0030333923296,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:09:25.251810",
+      "start_time": "2026-09-22T13:10:25.919990",
+      "end_time": "2026-09-22T13:11:02.385165",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 39,
+      "version": "a",
+      "repetition_index": 22,
+      "cpu_energy_j": 429.44055696278724,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:11:11.850317",
+      "start_time": "2026-09-22T13:12:11.731241",
+      "end_time": "2026-09-22T13:12:48.896912",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 40,
+      "version": "a",
+      "repetition_index": 23,
+      "cpu_energy_j": 413.73660811197317,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:12:58.334373",
+      "start_time": "2026-09-22T13:13:58.818039",
+      "end_time": "2026-09-22T13:14:35.440875",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 41,
+      "version": "a",
+      "repetition_index": 24,
+      "cpu_energy_j": 398.15326188601273,
+      "dram_energy_j": null,
+      "runtime_s": 36.0,
+      "measurement_started_at": "2026-09-22T13:14:44.832139",
+      "start_time": "2026-09-22T13:15:42.161892",
+      "end_time": "2026-09-22T13:16:17.582942",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 42,
+      "version": "b",
+      "repetition_index": 17,
+      "cpu_energy_j": 460.5287821199527,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:16:26.709264",
+      "start_time": "2026-09-22T13:17:27.087429",
+      "end_time": "2026-09-22T13:18:04.521325",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 43,
+      "version": "b",
+      "repetition_index": 18,
+      "cpu_energy_j": 463.88362547378136,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:18:14.976979",
+      "start_time": "2026-09-22T13:19:19.320543",
+      "end_time": "2026-09-22T13:19:56.890166",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 44,
+      "version": "b",
+      "repetition_index": 19,
+      "cpu_energy_j": 457.1910262478484,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:21:54.331198",
+      "start_time": "2026-09-22T13:23:02.758543",
+      "end_time": "2026-09-22T13:23:39.433797",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_044/raw_cpu_20260922_132153.csv covers 29 of the 39 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 45,
+      "version": "a",
+      "repetition_index": 25,
+      "cpu_energy_j": 402.8866995273265,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:23:48.140401",
+      "start_time": "2026-09-22T13:24:47.764373",
+      "end_time": "2026-09-22T13:25:23.357762",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 46,
+      "version": "b",
+      "repetition_index": 20,
+      "cpu_energy_j": 464.2207350135549,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T13:27:21.593682",
+      "start_time": "2026-09-22T13:28:21.900118",
+      "end_time": "2026-09-22T13:28:59.475264",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_046/raw_cpu_20260922_132720.csv covers 29 of the 38 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 47,
+      "version": "b",
+      "repetition_index": 21,
+      "cpu_energy_j": 471.10771986882963,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:29:09.486520",
+      "start_time": "2026-09-22T13:30:09.859390",
+      "end_time": "2026-09-22T13:30:46.954848",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 48,
+      "version": "b",
+      "repetition_index": 22,
+      "cpu_energy_j": 462.62163362660954,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T13:32:48.982764",
+      "start_time": "2026-09-22T13:33:49.473284",
+      "end_time": "2026-09-22T13:34:27.375681",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_048/raw_cpu_20260922_133248.csv covers 29 of the 39 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 49,
+      "version": "b",
+      "repetition_index": 23,
+      "cpu_energy_j": 446.6134610911094,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:34:37.332688",
+      "start_time": "2026-09-22T13:35:34.900025",
+      "end_time": "2026-09-22T13:36:10.674180",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 50,
+      "version": "a",
+      "repetition_index": 26,
+      "cpu_energy_j": 414.8933266724792,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:36:19.660294",
+      "start_time": "2026-09-22T13:37:24.162436",
+      "end_time": "2026-09-22T13:38:00.791946",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 51,
+      "version": "b",
+      "repetition_index": 24,
+      "cpu_energy_j": 457.04291967665574,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:38:10.447221",
+      "start_time": "2026-09-22T13:39:10.378939",
+      "end_time": "2026-09-22T13:39:47.639619",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 52,
+      "version": "a",
+      "repetition_index": 27,
+      "cpu_energy_j": 412.7427655113254,
+      "dram_energy_j": null,
+      "runtime_s": 37.0,
+      "measurement_started_at": "2026-09-22T13:39:57.885039",
+      "start_time": "2026-09-22T13:40:55.528279",
+      "end_time": "2026-09-22T13:41:31.825337",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 53,
+      "version": "b",
+      "repetition_index": 25,
+      "cpu_energy_j": 464.14223929097955,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:41:41.322387",
+      "start_time": "2026-09-22T13:42:41.847220",
+      "end_time": "2026-09-22T13:43:18.497962",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 54,
+      "version": "a",
+      "repetition_index": 28,
+      "cpu_energy_j": 428.41108396533133,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:43:28.090652",
+      "start_time": "2026-09-22T13:44:28.486412",
+      "end_time": "2026-09-22T13:45:05.108886",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 55,
+      "version": "a",
+      "repetition_index": 29,
+      "cpu_energy_j": 393.17856551335814,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:45:14.306585",
+      "start_time": "2026-09-22T13:46:19.798473",
+      "end_time": "2026-09-22T13:46:56.363498",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 56,
+      "version": "b",
+      "repetition_index": 26,
+      "cpu_energy_j": 480.8971407387826,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:47:05.480165",
+      "start_time": "2026-09-22T13:48:05.843535",
+      "end_time": "2026-09-22T13:48:42.988077",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 57,
+      "version": "b",
+      "repetition_index": 27,
+      "cpu_energy_j": 445.2015855484763,
+      "dram_energy_j": null,
+      "runtime_s": 39.0,
+      "measurement_started_at": "2026-09-22T13:50:39.507901",
+      "start_time": "2026-09-22T13:51:44.434055",
+      "end_time": "2026-09-22T13:52:22.035411",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: validation failed: data/raw/9/slot_057/raw_cpu_20260922_135038.csv covers 29 of the 37 requested seconds, more than 3 short, so this repetition's window was only partly measured; this attempt's export was short of its window and a re-read of the archived database did not recover it"
+    },
+    {
+      "slot": 58,
+      "version": "b",
+      "repetition_index": 28,
+      "cpu_energy_j": 456.58707869694814,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:52:31.273772",
+      "start_time": "2026-09-22T13:53:30.968671",
+      "end_time": "2026-09-22T13:54:07.724886",
+      "attempt_count": 0,
+      "validation_notes": null
+    },
+    {
+      "slot": 59,
+      "version": "b",
+      "repetition_index": 29,
+      "cpu_energy_j": 458.8911851994309,
+      "dram_energy_j": null,
+      "runtime_s": 38.0,
+      "measurement_started_at": "2026-09-22T13:57:04.478629",
+      "start_time": "2026-09-22T13:57:51.085013",
+      "end_time": "2026-09-22T13:58:28.680058",
+      "attempt_count": 1,
+      "validation_notes": "attempt 1 failed: lifecycle failure: reset_script '/home/metrilens/metrilens/scenarios/inventree_session_flow/reset_cache_off.sh' failed: InvenTree did not become ready within 2 minutes\nINVE-W3: Could not detect git information.\n[X]  InvenTree.0001_initial\n[X]  contenttypes.0001_initial\n[X]  auth.0001_initial\n[X]  account.0001_initial\n[X]  account.0002_email_max_length\n[X]  account.0003_alter_emailaddress_create_unique_verified_email\n[X]  account.0004_alter_emailaddress_drop_unique_email\n[X]  account.0005_emailaddress_idx_upper_email\n[X]  account.0006_emailaddress_lower\n[X]  account.0007_emailaddress_idx_email\n[X]  account.0008_emailaddress_unique_primary_email_fixup\n[X]  account.0009_emailaddress_unique_primary_email\n[X]  admin.0001_initial\n[X]  admin.0002_logentry_remove_auto_add\n[X]  admin.0003_logentry_add_action_flag_choices\n[X]  contenttypes.0002_remove_content_type_name\n[X]  auth.0002_alter_permission_name_max_length\n[X]  auth.0003_alter_user_email_max_length\n[X]  auth.0004_alter_user_username_opts\n[X]  auth.0005_alter_user_last_login_null\n[X]  auth.0006_require_contenttypes_0002\n[X]  auth.0007_alter_validators_add_error_messages\n[X]  auth.0008_alter_user_username_max_length\n[X]  auth.0009_alter_user_last_name_max_length\n[X]  auth.0010_alter_group_name_max_length\n[X]  auth.0011_update_proxy_permissions\n[X]  auth.0012_alter_user_first_name_max_length\n[X]  taggit.0001_initial\n[X]  taggit.0002_auto_20150616_2121\n[X]  taggit.0003_taggeditem_add_unique_index\n[X]  taggit.0004_alter_taggeditem_content_type_alter_taggeditem_tag\n[X]  taggit.0005_auto_20220424_2025\n[X]  taggit.0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx\n[X]  users.0001_initial\n[X]  users.0002_auto_20201004_0158\n[X]  users.0003_auto_20201005_2227\n[X]  users.0004_auto_20210113_1909\n[X]  users.0005_owner_model\n[X]  part.0001_initial\n[X]  company.0001_initial\n[X]  stock.0001_initial\n[X]  stock.0002_auto_20190525_2226\n[X]  stock.0003_auto_20190525_2303\n[X]  stock.0004_auto_20190525_2356\n[X]  stock.0005_auto_20190602_1944\n[X]  company.0002_auto_20190520_2204\n[X]  company.0003_remove_supplierpart_minimum\n[X]  company.0004_auto_20190525_2354\n[X]  company.0005_auto_20190525_2356\n[X]  order.0001_initial\n[X]  order.0002_auto_20190604_2224\n[X]  order.0003_auto_20190604_2226\n[X]  order.0004_purchaseorder_status\n[X]  order.0005_purchaseorderlineitem_part\n[X]  order.0006_auto_20190605_2056\n[X]  order.0007_auto_20190605_2138\n[X]  order.0008_auto_20190605_2140\n[X]  order.0009_auto_20190606_2133\n[X]  order.0010_purchaseorderlineitem_notes\n[X]  stock.0006_stockitem_purchase_order\n[X]  stock.0007_auto_20190618_0042\n[X]  stock.0008_stockitemtracking_url\n[X]  stock.0009_auto_20190715_2351\n[X]  build.0001_initial\n[X]  build.0002_auto_20190520_2204\n[X]  build.0003_auto_20190525_2355\n[X]  build.0004_auto_20190525_2356\n[X]  build.0005_auto_20190604_2217\n[X]  stock.0010_stockitem_build\n[X]  stock.0011_auto_20190908_0404\n[X]  stock.0012_auto_20190908_0405\n[X]  stock.0013_auto_20190908_0916\n[X]  stock.0014_auto_20190908_0918\n[X]  stock.0015_auto_20190913_1407\n[X]  stock.0016_auto_20191118_2146\n[X]  stock.0017_auto_20191118_2311\n[X]  stock.0018_auto_20200202_0103\n[X]  stock.0019_auto_20200202_1024\n[X]  stock.0020_auto_20200206_1213\n[X]  stock.0021_auto_20200215_2232\n[X]  stock.0022_auto_20200217_1109\n[X]  stock.0023_auto_20200318_1027\n[X]  stock.0024_auto_20200405_2239\n[X]  stock.0025_auto_20200405_2243\n[X]  stock.0026_stockitem_uid\n[X]  part.0002_auto_20190520_2204\n[X]  part.0003_auto_20190525_2226\n[X]  part.0004_auto_20190525_2356\n[X]  part.0005_auto_20190526_1119\n[X]  part.0006_auto_20190526_1215\n[X]  part.0007_auto_20190602_1944\n[X]  part.0008_auto_20190618_0042\n[X]  part.0009_part_virtual\n[X]  part.0010_auto_20190620_2135\n[X]  part.0011_part_revision\n[X]  part.0012_auto_20190627_2144\n[X]  part.0013_auto_20190628_0951\n[X]  part.0014_partparameter\n[X]  part.0015_auto_20190820_0251\n[X]  part.0016_auto_20190820_0257\n[X]  part.0017_bomitem_checksum\n[X]  part.0018_auto_20190907_0941\n[X]  part.0019_auto_20190908_0404\n[X]  part.0020_auto_20190908_0404\n[X]  part.0021_auto_20190908_0916\n[X]  part.0022_auto_20190908_0918\n[X]  part.0023_auto_20190913_1401\n[X]  part.0024_auto_20191118_2139\n[X]  part.0025_auto_20191118_2316\n[X]  part.0026_auto_20200131_1022\n[X]  part.0027_auto_20200202_1024\n[X]  part.0028_auto_20200203_1007\n[X]  part.0029_auto_20200223_0901\n[X]  part.0030_auto_20200318_1027\n[X]  part.0031_auto_20200318_1044\n[X]  part.0032_auto_20200322_0453\n[X]  part.0033_auto_20200404_0445\n[X]  part.0034_auto_20200404_1238\n[X]  part.0035_auto_20200406_0045\n[X]  order.0011_auto_20190615_1928\n[X]  order.0012_auto_20190617_1943\n[X]  order.0013_auto_20191118_2323\n[X]  order.0014_auto_20191118_2328\n[X]  order.0015_auto_20200201_2346\n[X]  order.0016_purchaseorderattachment\n[X]  order.0017_auto_20200331_1000\n[X]  order.0018_auto_20200406_0151\n[X]  order.0019_purchaseorder_supplier_reference\n[X]  common.0001_initial\n[X]  common.0002_auto_20190902_2304\n[X]  common.0003_auto_20190902_2310\n[X]  company.0006_supplierpricebreak_currency\n[X]  company.0007_remove_supplierpart_lead_time\n[X]  company.0008_auto_20190913_1407\n[X]  company.0009_auto_20191118_2323\n[X]  company.0010_auto_20200201_1231\n[X]  company.0011_auto_20200318_1114\n[X]  company.0012_auto_20200318_1114\n[X]  company.0013_auto_20200406_0131\n[X]  company.0014_auto_20200407_0116\n[X]  company.0015_company_is_manufacturer\n[X]  company.0016_auto_20200412_2330\n[X]  company.0017_auto_20200413_0320\n[X]  company.0018_supplierpart_manufacturer\n[X]  company.0019_auto_20200413_0642\n[X]  company.0020_auto_20200413_0839\n[X]  company.0021_remove_supplierpart_manufacturer_name\n[X]  order.0020_auto_20200420_0940\n[X]  order.0021_auto_20200420_1010\n[X]  order.0022_salesorderlineitem_part\n[X]  order.0023_auto_20200420_2309\n[X]  stock.0027_stockitem_sales_order\n[X]  stock.0028_auto_20200421_0724\n[X]  stock.0029_auto_20200421_2359\n[X]  stock.0030_auto_20200422_0015\n[X]  order.0024_salesorderallocation\n[X]  stock.0031_auto_20200422_0209\n[X]  order.0025_auto_20200422_0222\n[X]  order.0026_auto_20200422_0224\n[X]  order.0027_auto_20200422_0236\n[X]  order.0028_auto_20200423_0956\n[X]  order.0029_auto_20200423_1042\n[X]  build.0006_auto_20190913_1407\n[X]  build.0007_auto_20191118_2321\n[X]  build.0008_auto_20200201_1247\n[X]  build.0009_auto_20200210_1032\n[X]  build.0010_auto_20200318_1027\n[X]  build.0011_auto_20200406_0123\n[X]  build.0012_build_sales_order\n[X]  build.0013_auto_20200425_0507\n[X]  build.0014_auto_20200425_1243\n[X]  build.0015_auto_20200425_1350\n[X]  stock.0032_stockitem_build_order\n[X]  stock.0033_auto_20200426_0539\n[X]  order.0030_auto_20200426_0551\n[X]  build.0016_auto_20200426_0551\n[X]  stock.0034_auto_20200426_0602\n[X]  stock.0035_auto_20200502_2308\n[X]  stock.0036_stockitemattachment\n[X]  stock.0037_stockitemattachment_user\n[X]  stock.0038_stockitemattachment_upload_date\n[X]  stock.0039_auto_20200513_0016\n[X]  stock.0040_stockitemtestresult\n[X]  stock.0041_stockitemtestresult_notes\n[X]  stock.0042_auto_20200523_0121\n[X]  part.0036_partattachment_user\n[X]  part.0037_partattachment_upload_date\n[X]  part.0038_auto_20200513_0016\n[X]  part.0039_auto_20200515_1127\n[X]  part.0040_parttesttemplate\n[X]  part.0041_auto_20200517_0348\n[X]  part.0042_auto_20200518_0900\n[X]  stock.0043_auto_20200525_0420\n[X]  stock.0044_auto_20200528_1036\n[X]  stock.0045_stockitem_customer\n[X]  stock.0046_auto_20200605_0931\n[X]  stock.0047_auto_20200605_0932\n[X]  stock.0048_auto_20200807_2344\n[X]  part.0043_auto_20200527_0005\n[X]  part.0044_auto_20200605_0931\n[X]  part.0045_auto_20200605_0932\n[X]  company.0022_auto_20200613_1045\n[X]  company.0023_auto_20200808_0715\n[X]  stock.0049_auto_20200820_0454\n[X]  stock.0050_auto_20200821_1403\n[X]  stock.0051_auto_20200928_0928\n[X]  stock.0052_stockitem_is_building\n[X]  common.0004_inventreesetting\n[X]  stock.0053_auto_20201110_0513\n[X]  stock.0054_remove_stockitem_build_order\n[X]  stock.0055_auto_20201117_1453\n[X]  stock.0056_stockitem_expiry_date\n[X]  stock.0057_stock_location_item_owner\n[X]  stock.0058_stockitem_packaging\n[X]  stock.0059_auto_20210404_2016\n[X]  stock.0060_auto_20210511_1713\n[X]  stock.0061_auto_20210511_0911\n[X]  stock.0062_auto_20210511_2151\n[X]  stock.0063_auto_20210511_2343\n[X]  stock.0064_auto_20210621_1724\n[X]  stock.0065_auto_20210701_0509\n[X]  stock.0066_stockitem_scheduled_for_deletion\n[X]  part.0046_auto_20200804_0107\n[X]  part.0047_auto_20200808_0715\n[X]  part.0048_auto_20200902_1404\n[X]  common.0005_auto_20190915_1256\n[X]  common.0006_auto_20200203_0951\n[X]  common.0007_colortheme\n[X]  part.0049_partsellpricebreak\n[X]  part.0050_auto_20200917_2315\n[X]  part.0051_bomitem_optional\n[X]  part.0052_partrelated\n[X]  part.0054_auto_20201109_1246\n[X]  part.0055_auto_20201110_1001\n[X]  part.0056_auto_20201110_1125\n[X]  part.0057_remove_partsellpricebreak_currency\n[X]  part.0058_remove_partsellpricebreak_cost\n[X]  part.0059_auto_20201112_1112\n[X]  part.0053_partcategoryparametertemplate\n[X]  part.0060_merge_20201112_1722\n[X]  company.0024_unique_name_email_constraint\n[X]  company.0025_auto_20201110_1001\n[X]  company.0026_auto_20201110_1011\n[X]  company.0027_remove_supplierpricebreak_currency\n[X]  company.0028_remove_supplierpricebreak_cost\n[X]  company.0029_company_currency\n[X]  company.0030_auto_20201112_1112\n[X]  company.0031_auto_20210103_2215\n[X]  part.0061_auto_20210104_2331\n[X]  part.0061_auto_20210103_2313\n[X]  part.0062_merge_20210105_0056\n[X]  part.0063_bomitem_inherited\n[X]  part.0064_auto_20210404_2016\n[X]  part.0065_auto_20210505_2144\n[X]  part.0066_bomitem_allow_variants\n[X]  part.0067_partinternalpricebreak\n[X]  part.0068_part_unique_part\n[X]  part.0069_auto_20210701_0509\n[X]  part.0070_alter_part_variant_of\n[X]  part.0071_alter_partparametertemplate_name\n[X]  part.0072_bomitemsubstitute\n[X]  part.0073_auto_20211013_1048\n[X]  part.0074_partcategorystar\n[X]  stock.0067_alter_stockitem_part\n[X]  stock.0068_stockitem_serial_int\n[X]  stock.0069_auto_20211109_2347\n[X]  stock.0070_auto_20211128_0151\n[X]  django_q.0001_initial\n[X]  django_q.0002_auto_20150630_1624\n[X]  django_q.0003_auto_20150708_1326\n[X]  django_q.0004_auto_20150710_1043\n[X]  django_q.0005_auto_20150718_1506\n[X]  django_q.0006_auto_20150805_1817\n[X]  django_q.0007_ormq\n[X]  stock.0071_auto_20211205_1733\n[X]  stock.0072_remove_stockitem_scheduled_for_deletion\n[X]  stock.0073_alter_stockitem_belongs_to\n[X]  stock.0074_alter_stockitem_batch\n[X]  stock.0075_auto_20220515_1440\n[X]  stock.0076_alter_stockitem_status\n[X]  stock.0077_alter_stockitem_notes\n[X]  company.0032_auto_20210403_1837\n[X]  company.0033_auto_20210410_1528\n[X]  company.0034_manufacturerpart\n[X]  company.0035_supplierpart_update_1\n[X]  company.0036_supplierpart_update_2\n[X]  company.0037_supplierpart_update_3\n[X]  company.0038_manufacturerpartparameter\n[X]  company.0039_auto_20210701_0509\n[X]  company.0040_alter_company_currency\n[X]  company.0041_alter_company_options\n[X]  company.0042_supplierpricebreak_updated\n[X]  company.0043_manufacturerpartattachment\n[X]  company.0044_auto_20220607_2204\n[X]  company.0045_alter_company_notes\n[X]  company.0046_alter_company_image\n[X]  stock.0078_alter_stockitem_supplier_part\n[X]  stock.0079_alter_stocklocation_name\n[X]  stock.0080_stocklocation_pathstring\n[X]  stock.0081_auto_20220801_0044\n[X]  stock.0082_alter_stockitem_link\n[X]  stock.0083_stocklocation_icon\n[X]  stock.0084_auto_20220903_0154\n[X]  stock.0085_auto_20220903_0225\n[X]  stock.0086_remove_stockitem_uid\n[X]  stock.0087_auto_20220912_2341\n[X]  stock.0088_remove_stockitem_infinite\n[X]  stock.0089_alter_stockitem_purchase_price\n[X]  stock.0090_stocklocation_structural\n[X]  stock.0091_alter_stockitem_delete_on_deplete\n[X]  stock.0092_alter_stockitem_updated\n[X]  stock.0093_auto_20230217_2140\n[X]  company.0047_supplierpart_pack_size\n[X]  stock.0094_auto_20230220_0025\n[X]  stock.0095_stocklocation_external\n[X]  stock.0096_auto_20230330_1121\n[X]  stock.0097_alter_stockitem_notes\n[X]  stock.0098_auto_20230427_2033\n[X]  stock.0099_alter_stockitem_status\n[X]  stock.0100_auto_20230515_0004\n[X]  build.0017_auto_20200426_0612\n[X]  build.0018_build_reference\n[X]  build.0019_auto_20201019_1302\n[X]  build.0020_auto_20201019_1325\n[X]  build.0021_auto_20201020_0908_squashed_0026_auto_20201023_1228\n[X]  build.0022_buildorderattachment\n[X]  build.0023_auto_20201110_0911\n[X]  build.0024_auto_20201201_1023\n[X]  build.0025_build_target_date\n[X]  build.0026_auto_20210216_1539\n[X]  build.0027_auto_20210404_2016\n[X]  build.0028_builditem_bom_item\n[X]  build.0029_auto_20210601_1525\n[X]  build.0030_alter_build_reference\n[X]  build.0031_build_reference_int\n[X]  build.0032_auto_20211014_0632\n[X]  build.0033_auto_20211128_0151\n[X]  build.0034_alter_build_reference_int\n[X]  build.0035_alter_build_notes\n[X]  build.0036_auto_20220707_1101\n[X]  build.0037_build_priority\n[X]  build.0038_alter_build_responsible\n[X]  build.0039_auto_20230317_0816\n[X]  build.0040_auto_20230404_1310\n[X]  build.0041_alter_build_title\n[X]  build.0042_alter_build_notes\n[X]  stock.0100_stockitem_consumed_by\n[X]  stock.0101_stockitemtestresult_metadata\n[X]  stock.0102_alter_stockitem_status\n[X]  stock.0103_stock_location_types\n[X]  stock.0104_alter_stockitem_purchase_price_currency\n[X]  users.0006_alter_ruleset_name\n[X]  users.0007_alter_ruleset_name\n[X]  users.0008_apitoken\n[X]  users.0009_auto_20231020_2356\n[X]  part.0075_auto_20211128_0151\n[X]  part.0076_auto_20220516_0819\n[X]  part.0077_alter_bomitem_unique_together\n[X]  part.0078_auto_20220606_0024\n[X]  part.0079_alter_part_notes\n[X]  part.0080_alter_part_image\n[X]  part.0081_alter_partcategory_name\n[X]  part.0082_partcategory_pathstring\n[X]  part.0083_auto_20220731_2357\n[X]  part.0084_partcategory_icon\n[X]  part.0085_partparametertemplate_description\n[X]  part.0086_auto_20220912_0007\n[X]  part.0087_bomitem_consumable\n[X]  part.0088_alter_partparametertemplate_name\n[X]  part.0089_auto_20221112_0128\n[X]  part.0090_auto_20221115_0816\n[X]  part.0091_partstocktake\n[X]  part.0092_part_last_stocktake\n[X]  part.0093_auto_20230115_1404\n[X]  part.0094_alter_part_units\n[X]  part.0095_alter_part_responsible\n[X]  part.0096_auto_20230211_0029\n[X]  part.0097_partstocktakereport\n[X]  part.0098_auto_20230214_1115\n[X]  part.0099_alter_bomitem_inherited\n[X]  part.0100_alter_bomitem_reference\n[X]  part.0101_bomitem_validated\n[X]  part.0102_auto_20230314_0112\n[X]  part.0103_auto_20230317_0816\n[X]  part.0104_alter_part_description\n[X]  part.0105_alter_part_notes\n[X]  part.0106_part_tags\n[X]  part.0107_alter_part_tags\n[X]  part.0108_auto_20230516_1334\n[X]  part.0109_auto_20230517_1048\n[X]  part.0110_alter_part_units\n[X]  part.0111_auto_20230521_1350\n[X]  part.0112_auto_20230525_1606\n[X]  part.0113_auto_20230531_1205\n[X]  part.0114_alter_part_minimum_stock\n[X]  part.0115_part_responsible_owner\n[X]  part.0116_auto_20231023_0332\n[X]  part.0117_remove_part_responsible\n[X]  part.0118_auto_20231024_1844\n[X]  part.0119_auto_20231120_0457\n[X]  part.0120_parttesttemplate_key\n[X]  part.0121_auto_20240207_0344\n[X]  stock.0105_stockitemtestresult_template\n[X]  stock.0106_auto_20240207_0353\n[X]  stock.0107_remove_stockitemtestresult_test_and_more\n[X]  stock.0108_auto_20240219_0252\n[X]  stock.0109_add_additional_test_fields\n[X]  stock.0110_alter_stockitemtestresult_finished_datetime_and_more\n[X]  part.0122_parttesttemplate_enabled\n[X]  part.0123_parttesttemplate_choices\n[X]  order.0031_auto_20200426_0612\n[X]  order.0032_auto_20200427_0044\n[X]  order.0033_auto_20200512_1033\n[X]  order.0034_auto_20200512_1054\n[X]  order.0035_auto_20200513_0016\n[X]  order.0036_auto_20200831_0912\n[X]  order.0037_auto_20201110_0911\n[X]  order.0038_auto_20201112_1737\n[X]  order.0039_auto_20201112_2203\n[X]  order.0040_salesorder_target_date\n[X]  order.0041_auto_20210114_1728\n[X]  order.0042_auto_20210310_1619\n[X]  order.0043_auto_20210330_0013\n[X]  order.0044_auto_20210404_2016\n[X]  order.0045_auto_20210504_1946\n[X]  order.0046_purchaseorderlineitem_destination\n[X]  order.0047_auto_20210701_0509\n[X]  order.0048_auto_20210702_2321\n[X]  order.0049_alter_purchaseorderlineitem_unique_together\n[X]  order.0050_alter_purchaseorderlineitem_destination\n[X]  order.0051_auto_20211014_0623\n[X]  order.0052_auto_20211014_0631\n[X]  order.0053_auto_20211128_0151\n[X]  order.0053_salesordershipment\n[X]  order.0054_salesorderallocation_shipment\n[X]  order.0055_auto_20211025_0645\n[X]  order.0056_alter_salesorderallocation_shipment\n[X]  order.0057_salesorderlineitem_shipped\n[X]  order.0058_auto_20211126_1210\n[X]  order.0059_salesordershipment_tracking_number\n[X]  order.0060_auto_20211129_1339\n[X]  order.0054_auto_20211201_2139\n[X]  order.0061_merge_0054_auto_20211201_2139_0060_auto_20211129_1339\n[X]  order.0062_auto_20220228_0321\n[X]  order.0063_alter_purchaseorderlineitem_unique_together\n[X]  order.0064_purchaseorderextraline_salesorderextraline\n[X]  order.0065_alter_purchaseorderlineitem_part\n[X]  order.0066_alter_purchaseorder_supplier\n[X]  order.0067_auto_20220516_1120\n[X]  order.0068_alter_salesorderallocation_unique_together\n[X]  order.0069_auto_20220524_0508\n[X]  order.0070_auto_20220620_0728\n[X]  order.0071_auto_20220628_0133\n[X]  order.0072_alter_salesorder_reference\n[X]  order.0073_alter_purchaseorder_reference\n[X]  order.0074_auto_20220709_0108\n[X]  order.0075_auto_20221110_0108\n[X]  order.0076_auto_20221111_0153\n[X]  order.0077_auto_20230129_0154\n[X]  order.0078_auto_20230304_0721\n[X]  order.0079_auto_20230304_0904\n[X]  order.0080_auto_20230317_0816\n[X]  company.0048_auto_20220913_0312\n[X]  company.0049_company_metadata\n[X]  company.0050_alter_company_website\n[X]  company.0051_alter_supplierpricebreak_price\n[X]  company.0052_alter_supplierpricebreak_updated\n[X]  company.0053_supplierpart_updated\n[X]  company.0054_companyattachment\n[X]  order.0081_auto_20230314_0725\n[X]  order.0082_auto_20230314_1259\n[X]  order.0083_returnorderextraline\n[X]  order.0084_auto_20230321_1111\n[X]  order.0085_auto_20230322_1056\n[X]  order.0086_auto_20230323_1108\n[X]  order.0087_alter_salesorder_status\n[X]  order.0088_auto_20230403_1402\n[X]  order.0089_auto_20230404_0030\n[X]  order.0090_auto_20230412_1752\n[X]  order.0091_auto_20230419_0037\n[X]  common.0008_remove_inventreesetting_description\n[X]  common.0009_delete_currency\n[X]  common.0010_migrate_currency_setting\n[X]  common.0011_auto_20210722_2114\n[X]  common.0012_notificationentry\n[X]  common.0013_webhookendpoint_webhookmessage\n[X]  common.0014_notificationmessage\n[X]  common.0015_newsfeedentry\n[X]  common.0016_alter_notificationentry_updated\n[X]  common.0017_notesimage\n[X]  common.0018_projectcode\n[X]  order.0092_auto_20230419_0250\n[X]  order.0093_auto_20230426_0248\n[X]  order.0094_auto_20230514_2331\n[X]  order.0095_salesordershipment_delivery_date\n[X]  order.0096_alter_returnorderlineitem_outcome\n[X]  company.0055_auto_20230317_0816\n[X]  company.0056_alter_company_notes\n[X]  company.0057_auto_20230427_2033\n[X]  company.0058_auto_20230515_0004\n[X]  company.0059_supplierpart_pack_units\n[X]  company.0060_auto_20230519_0344\n[X]  company.0061_remove_supplierpart_pack_size\n[X]  company.0062_contact_metadata\n[X]  company.0063_auto_20230502_1956\n[X]  company.0064_move_address_field_to_address_model\n[X]  company.0065_remove_company_address\n[X]  order.0097_auto_20230529_0107\n[X]  order.0098_auto_20231024_1844\n[X]  order.0099_alter_salesorder_status\n[X]  company.0066_auto_20230616_2059\n[X]  company.0067_alter_supplierpricebreak_price_currency\n[X]  company.0068_auto_20231120_1108\n[X]  company.0069_company_active\n[X]  users.0010_alter_apitoken_key\n[X]  common.0019_projectcode_metadata\n[X]  common.0020_customunit\n[X]  common.0021_auto_20230805_1748\n[X]  common.0022_projectcode_responsible\n[X]  common.0023_auto_20240602_1332\n[X]  common.0024_notesimage_model_id_notesimage_model_type\n[X]  common.0025_attachment\n[X]  build.0043_buildline\n[X]  build.0044_auto_20230528_1410\n[X]  build.0045_builditem_build_line\n[X]  build.0046_auto_20230606_1033\n[X]  build.0047_auto_20230606_1058\n[X]  build.0048_build_project_code\n[X]  build.0049_alter_builditem_build_line\n[X]  build.0050_auto_20240508_0138\n[X]  common.0026_auto_20240608_1238\n[X]  part.0124_delete_partattachment\n[X]  part.0125_part_locked\n[X]  part.0126_part_revision_of\n[X]  part.0127_remove_partcategory_icon_partcategory__icon\n[X]  part.0128_part_testable\n[X]  part.0129_auto_20240815_0214\n[X]  part.0130_alter_parttesttemplate_part\n[X]  build.0051_delete_buildorderattachment\n[X]  build.0052_build_status_custom_key_alter_build_status\n[X]  build.0053_alter_build_part\n[X]  build.0054_build_start_date\n[X]  build.0055_auto_20250221_1230\n[X]  build.0056_alter_build_link\n[X]  build.0057_build_external\n[X]  build.0058_buildline_consumed\n[X]  build.0059_build_tags\n[X]  part.0131_partrelated_note\n[X]  plugin.0001_initial\n[X]  plugin.0002_alter_pluginconfig_options\n[X]  plugin.0003_pluginsetting\n[X]  plugin.0004_alter_pluginsetting_key\n[X]  plugin.0005_notificationusersetting\n[X]  plugin.0006_pluginconfig_metadata\n[X]  plugin.0007_auto_20230805_1748\n[X]  plugin.0008_pluginconfig_package_name\n[X]  plugin.0009_alter_pluginconfig_key\n[X]  common.0027_alter_customunit_symbol\n[X]  common.0028_colortheme_user_obj\n[X]  common.0029_inventreecustomuserstatemodel\n[X]  common.0030_barcodescanresult\n[X]  common.0031_auto_20241026_0024\n[X]  common.0032_selectionlist_selectionlistentry_and_more\n[X]  part.0132_partparametertemplate_selectionlist\n[X]  part.0133_alter_partcategory__icon\n[X]  part.0134_auto_20250221_1309\n[X]  part.0135_alter_part_link\n[X]  part.0136_partparameter_note_partparameter_updated_and_more\n[X]  part.0137_bomitem_attrition_bomitem_rounding_multiple_and_more\n[X]  part.0138_auto_20250718_2342\n[X]  part.0139_remove_bomitem_overage\n[X]  part.0140_part_bom_validated\n[X]  part.0141_auto_20250722_0303\n[X]  part.0142_remove_part_last_stocktake_remove_partstocktake_note_and_more\n[X]  part.0143_alter_part_image\n[X]  part.0144_auto_20251203_1045\n[X]  common.0033_delete_colortheme\n[X]  common.0034_alter_inventreecustomuserstatemodel_unique_together_and_more\n[X]  common.0035_auto_20250221_1513\n[X]  common.0036_alter_attachment_link\n[X]  common.0037_dataoutput\n[X]  common.0038_alter_attachment_model_type\n[X]  common.0039_emailthread_emailmessage\n[X]  common.0040_parametertemplate_parameter\n[X]  part.0145_auto_20251203_1238\n[X]  common.0041_auto_20251203_1244\n[X]  common.0042_attachment_is_image_attachment_thumbnail\n[X]  common.0043_auto_20260518_1206\n[X]  common.0044_notificationmessage_charfield_pk\n[X]  part.0146_auto_20251203_1241\n[X]  company.0070_remove_manufacturerpartattachment_manufacturer_part_and_more\n[X]  company.0071_manufacturerpart_notes_supplierpart_notes\n[X]  company.0072_auto_20250221_1236\n[X]  company.0073_alter_address_link_alter_company_link_and_more\n[X]  company.0074_alter_manufacturerpart_link\n[X]  company.0075_company_tax_id\n[X]  company.0076_alter_company_image\n[X]  company.0077_delete_manufacturerpartparameter\n[X]  company.0078_supplierpart_primary\n[X]  company.0079_auto_20260212_1054\n[X]  company.0080_company_tags\n[X]  django_mailbox.0001_initial\n[X]  django_mailbox.0002_add_eml_to_message\n[X]  django_mailbox.0003_auto_20150409_0316\n[X]  django_mailbox.0004_bytestring_to_unicode\n[X]  django_mailbox.0005_auto_20160523_2240\n[X]  django_mailbox.0006_mailbox_last_polling\n[X]  django_mailbox.0007_auto_20180421_0026\n[X]  django_mailbox.0008_auto_20190219_1553\n[X]  django_mailbox.0009_alter_message_eml\n[X]  django_q.0008_auto_20160224_1026\n[X]  django_q.0009_auto_20171009_0915\n[X]  django_q.0010_auto_20200610_0856\n[X]  django_q.0011_auto_20200628_1055\n[X]  django_q.0012_auto_20200702_1608\n[X]  django_q.0013_task_attempt_count\n[X]  django_q.0014_schedule_cluster\n[X]  django_q.0015_alter_schedule_schedule_type\n[X]  django_q.0016_schedule_intended_date_kwarg\n[X]  django_q.0017_task_cluster_alter\n[X]  django_q.0018_task_success_index\n[X]  django_q.0019_alter_task_options_alter_ormq_key_alter_ormq_lock_and_more\n[X]  error_report.0001_initial\n[X]  exchange.0001_initial\n[X]  flags.0012_replace_migrations_for_wagtail_independence\n[X]  flags.0013_add_required_field\n[X]  flags.0014_flagstate_unique_constraint\n[X]  importer.0001_initial\n[X]  importer.0002_dataimportsession_field_overrides\n[X]  importer.0003_dataimportsession_field_filters\n[X]  importer.0004_alter_dataimportsession_model_type\n[X]  importer.0005_dataimportsession_update_records\n[X]  importer.0006_dataimportcolumnmap_lookup_field\n[X]  importer.0007_dataimportsession_completed_row_count_history_and_more\n[X]  machine.0001_initial\n[X]  mfa.0001_initial\n[X]  mfa.0002_authenticator_timestamps\n[X]  mfa.0003_authenticator_type_uniq\n[X]  oauth2_provider.0001_initial\n[X]  oauth2_provider.0002_auto_20190406_1805\n[X]  oauth2_provider.0003_auto_20201211_1314\n[X]  oauth2_provider.0004_auto_20200902_2022\n[X]  oauth2_provider.0005_auto_20211222_2352\n[X]  oauth2_provider.0006_alter_application_client_secret\n[X]  oauth2_provider.0007_application_post_logout_redirect_uris\n[X]  oauth2_provider.0008_alter_accesstoken_token\n[X]  oauth2_provider.0009_add_hash_client_secret\n[X]  oauth2_provider.0010_application_allowed_origins\n[X]  oauth2_provider.0011_refreshtoken_token_family\n[X]  oauth2_provider.0012_add_token_checksum\n[X]  oauth2_provider.0013_alter_application_authorization_grant_type_device\n[X]  oauth2_provider.0014_alter_help_text\n[X]  stock.0111_delete_stockitemattachment\n[X]  stock.0112_alter_stocklocation_custom_icon_and_more\n[X]  stock.0113_stockitem_status_custom_key_and_more\n[X]  stock.0114_alter_stocklocation_custom_icon\n[X]  stock.0115_auto_20250221_1323\n[X]  stock.0116_alter_stockitem_link\n[X]  order.0100_remove_returnorderattachment_order_and_more\n[X]  order.0101_purchaseorder_status_custom_key_and_more\n[X]  order.0102_purchaseorder_destination_and_more\n[X]  order.0103_alter_salesorderallocation_shipment\n[X]  order.0104_alter_returnorderlineitem_quantity\n[X]  order.0105_auto_20241128_0431\n[X]  order.0106_purchaseorder_start_date_returnorder_start_date_and_more\n[X]  order.0107_auto_20250221_1241\n[X]  order.0108_alter_purchaseorder_link_and_more_squashed_0109_alter_purchaseorderextraline_link_and_more\n[X]  order.0109_salesorder_issue_date\n[X]  order.0110_salesordershipment_barcode_data_and_more\n[X]  order.0111_purchaseorderlineitem_build_order\n[X]  order.0112_alter_salesorderlineitem_part\n[X]  order.0113_salesordershipment_shipment_address\n[X]  order.0114_purchaseorderextraline_project_code_and_more\n[X]  order.0115_purchaseorder_updated_at_returnorder_updated_at_and_more\n[X]  order.0116_purchaseorderextraline_line_and_more\n[X]  order.0117_purchaseorderextraline_line_int_and_more\n[X]  order.0118_transferorder\n[X]  order.0119_transferorderlineitem_line_int\n[X]  order.0120_purchaseorder_tags_returnorder_tags_salesorder_tags_and_more\n[X]  otp_static.0001_initial\n[X]  otp_static.0002_throttling\n[X]  otp_totp.0001_initial\n[X]  otp_totp.0002_auto_20190420_0723\n[X]  users.0011_auto_20240523_1640\n[X]  users.0012_alter_ruleset_can_view\n[X]  users.0013_migrate_mfa_20240408_1659\n[X]  users.0014_userprofile\n[X]  part.0147_remove_part_default_supplier\n[X]  part.0148_auto_20260427_2233\n[X]  part.0149_bomitem_raw_amount\n[X]  part.0150_part_maximum_stock\n[X]  plugin.0010_pluginusersetting\n[X]  plugin.0011_delete_notificationusersetting\n[X]  report.0001_initial\n[X]  report.0002_delete_reporttemplate\n[X]  report.0003_testreport_enabled\n[X]  report.0004_auto_20200823_1104\n[X]  report.0005_auto_20210119_0815\n[X]  report.0006_reportsnippet\n[X]  report.0007_auto_20210204_1617\n[X]  report.0008_auto_20210204_2100\n[X]  report.0009_testreport_revision\n[X]  report.0010_auto_20210205_1201\n[X]  report.0011_auto_20210212_2024\n[X]  report.0012_buildreport\n[X]  report.0013_testreport_include_installed\n[X]  report.0014_purchaseorderreport_salesorderreport\n[X]  report.0015_auto_20210403_1837\n[X]  report.0016_auto_20210513_1303\n[X]  report.0017_auto_20230317_0816\n[X]  report.0018_returnorderreport\n[X]  report.0019_returnorderreport_metadata\n[X]  report.0020_stocklocationreport\n[X]  report.0021_auto_20231009_0144\n[X]  report.0022_reporttemplate\n[X]  report.0023_auto_20240421_0455\n[X]  report.0024_delete_billofmaterialsreport_delete_buildreport_and_more\n[X]  report.0025_labeltemplate\n[X]  report.0026_auto_20240422_1301\n[ ]  report.0027_alter_labeltemplate_model_type_and_more\n[ ]  report.0028_labeltemplate_attach_to_model_and_more\n[ ]  report.0029_remove_reportoutput_template_and_more\n[ ]  report.0030_alter_labeltemplate_model_type_and_more\n[ ]  report.0031_reporttemplate_merge\n[ ]  report.0032_labeltemplate_updated_labeltemplate_updated_by_and_more\n[ ]  sessions.0001_initial\n[ ]  socialaccount.0001_initial\n[ ]  socialaccount.0002_token_max_lengths\n[ ]  socialaccount.0003_extra_data_default_dict\n[ ]  socialaccount.0004_app_provider_id_settings\n[ ]  socialaccount.0005_socialtoken_nullable_app\n[ ]  socialaccount.0006_alter_socialaccount_extra_data\n[ ]  stock.0117_stockitemtracking_part_alter_stockitemtracking_item\n[ ]  stock.0118_auto_20260205_1218\n[ ]  stock.0119_alter_stockitemtestresult_date\n[ ]  stock.0120_stockitem_creation_date\n[ ]  stock.0121_auto_20260526_0849\n[ ]  stock.0122_alter_stockitem_creation_date\n[ ]  stock.0123_remove_stockitem_review_needed\n[ ]  users.0015_alter_userprofile_type\n[ ]  usersessions.0001_initial"
+    }
+  ],
+  "thread_breakdown_containers": [
+    "inventree-worker",
+    "inventree-db",
+    "inventree-server",
+    "inventree-proxy"
+  ]
+}

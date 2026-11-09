@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use MetriLens in your research, please cite it as below."
+type: software
+title: "MetriLens: Comparing the Energy Consumption of Functionally Equivalent Application Versions"
+abstract: >-
+  MetriLens measures and compares the energy consumption of two functionally equivalent versions
+  of a Dockerized application under the same user-level workload, using METRION for thread-level
+  energy attribution, and reports the difference with confidence intervals.
+authors:
+  - family-names: "Böhm"
+    given-names: "Tobias"
+    email: "boehmt@hochschule-trier.de"
+    affiliation: "Trier University of Applied Sciences"
+  - family-names: "Bechthold"
+    given-names: "Domenic"
+    email: "dmbc2635@hochschule-trier.de"
+    affiliation: "Trier University of Applied Sciences"
+version: "0.1.0"
+license: Apache-2.0
+repository-code: "https://github.com/boehmtobias/MetriLens"
+keywords:
+  - energy measurement
+  - green software
+  - software modernization
+  - METRION
+  - Docker
+references:
+  - type: conference-paper
+    title: "METRION: A Framework for Accurate Software Energy Measurement"
+    authors:
+      - family-names: "Weigell"
+        given-names: "Benjamin"
+      - family-names: "Hornung"
+        given-names: "Simon"
+      - family-names: "Bauer"
+        given-names: "Bernhard"
+    collection-title: "Proceedings of the IEEE/ACM 10th International Workshop on Green and Sustainable Software (GREENS '26)"
+    publisher:
+      name: "Association for Computing Machinery"
+    year: 2026
+    start: 131
+    end: 138
+    doi: "10.1145/3786148.3788635"

@@ -1,0 +1,100 @@
+# Derived from InvenTree (https://github.com/inventree/InvenTree), contrib/container/, MIT License, Copyright (c) InvenTree contributors
+
+# InvenTree stack for MetriLens, adapted from InvenTree's own production recipe.
+# Five services: postgres, redis, the gunicorn server, the django-q worker, a caddy proxy.
+#
+# Two deliberate changes from InvenTree's own upstream recipe:
+#
+# 1. **Compose-managed named volumes instead of a host bind mount.** `docker compose down -v`
+#    removes named volumes but never touches a bind mount, so with a bind mount every reset
+#    script would have to wipe the data directory itself with `sudo rm -rf` on a path held in
+#    a shell variable, a real privilege-escalation risk if that path is ever writable by the
+#    account invoking sudo. Here `down -v` genuinely wipes, the reset scripts need no root at
+#    all, and the grant is absent from the sudoers policy. Each reset script asserts the
+#    database really is empty before seeding, so a volume that silently survives a teardown
+#    fails loudly rather than measuring accumulated state.
+#
+# 2. **No `container_name`.** Docker names are global, so two stacks that both declare
+#    `container_name: inventree-db` cannot run side by side. Omitting it lets Compose name
+#    containers `<project>-<service>-<n>`, which also makes each container say which stack it
+#    belongs to. MetriLens keys containers by *service* name, so the per-container attribution
+#    is unaffected either way.
+services:
+    inventree-db:
+        image: postgres:17
+        expose:
+            - ${INVENTREE_DB_PORT:-5432}/tcp
+        environment:
+            - PGDATA=/var/lib/postgresql/data/pgdb
+            - POSTGRES_USER=${INVENTREE_DB_USER:?You must provide the 'INVENTREE_DB_USER' variable in the .env file}
+            - POSTGRES_PASSWORD=${INVENTREE_DB_PASSWORD:?You must provide the 'INVENTREE_DB_PASSWORD' variable in the .env file}
+            - POSTGRES_DB=${INVENTREE_DB_NAME:?You must provide the 'INVENTREE_DB_NAME' variable in the .env file}
+        volumes:
+            - inventree_data:/var/lib/postgresql/data
+        restart: unless-stopped
+
+    inventree-cache:
+        image: redis:7-alpine
+        env_file:
+            - .env
+        expose:
+            - ${INVENTREE_CACHE_PORT:-6379}
+        volumes:
+            - redis_data:/data
+        restart: always
+
+    inventree-server:
+        image: inventree/inventree:${INVENTREE_TAG:-stable}
+        expose:
+            - ${INVENTREE_WEB_PORT:-8000}
+        depends_on:
+            - inventree-db
+            - inventree-cache
+        env_file:
+            - .env
+        environment:
+            INVENTREE_SERVER: http://inventree-server:${INVENTREE_WEB_PORT}
+        volumes:
+            - inventree_data:/home/inventree/data
+        restart: unless-stopped
+
+    inventree-worker:
+        image: inventree/inventree:${INVENTREE_TAG:-stable}
+        command: invoke worker
+        depends_on:
+            - inventree-server
+        env_file:
+            - .env
+        volumes:
+            - inventree_data:/home/inventree/data
+        restart: unless-stopped
+
+    inventree-proxy:
+        image: caddy:alpine
+        restart: always
+        depends_on:
+            - inventree-server
+        ports:
+            # Container-side port must equal the host port, because Caddy binds its internal
+            # listen port to whatever is literally in INVENTREE_SITE_URL (see the Caddyfile's
+            # address block).
+            - ${INVENTREE_HTTP_PORT:-80}:${INVENTREE_HTTP_PORT:-80}
+            - ${INVENTREE_HTTPS_PORT:-443}:${INVENTREE_HTTPS_PORT:-443}
+        env_file:
+            - .env
+        volumes:
+            - ./Caddyfile:/etc/caddy/Caddyfile:ro
+            # The server writes static/ and media/ into its own data volume, so mounting that
+            # volume at /var/www makes the Caddyfile's /var/www/static and /var/www/media
+            # roots resolve without needing per-subdirectory mounts.
+            - inventree_data:/var/www
+            - caddy_logs:/var/log
+            - caddy_data:/data
+            - caddy_config:/config
+
+volumes:
+    inventree_data:
+    redis_data:
+    caddy_logs:
+    caddy_data:
+    caddy_config:

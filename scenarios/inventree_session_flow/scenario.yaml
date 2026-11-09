@@ -1,0 +1,31 @@
+# InvenTree session flow. Version-independent: all per-version scripts realize exactly
+# these four step ids; login and any per-version setup happen before the first declared
+# step starts and are not themselves steps.
+name: InvenTree Session Flow
+description: >
+  Three iterations of creating a part, adjusting its stock and browsing the seeded
+  catalog, then one build order. Built to put the difference between versions in
+  per-HTTP-request server work rather than in wall clock.
+
+# Four step ids. `create_part`, `adjust_stock` and `browse_catalog` each appear
+# once per iteration in a repetition's step log, so a k=3 repetition logs 10 steps against
+# these four declared ids. Keeping the declared list independent of k is what lets the
+# figures aggregate by step id across iterations while showing each iteration
+# separately, and `ScenarioLogger` validates membership rather than order or count.
+steps:
+  - create_part
+  - adjust_stock
+  - browse_catalog
+  - run_build_order
+
+# k, the number of passes through the repeated block inside one repetition. `run_build_order`
+# sits outside the block and runs once per repetition, not once per iteration: it is the one
+# step that looks like real ERP work, but its sigma is a floor rather than a ratio, so
+# repeating it would triple the noise it contributes for no extra signal.
+#
+# Why k > 1: a longer window is kinder to RAPL, and averaging over iterations buys a
+# sqrt(k) improvement on the standard error. Summing over k also absorbs work the asynchronous
+# worker queue shifts from one iteration into the next.
+#
+# 3 targets roughly 50 s of declared steps per repetition.
+iterations: 3

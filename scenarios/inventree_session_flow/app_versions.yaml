@@ -1,0 +1,74 @@
+# The `app_version` rows realizing the session flow, loaded via:
+# `metrilens app-version load <this file> --scenario-id <id of InvenTree Session Flow>`.
+#
+# Paths are relative and machine-independent, though the `app_version`
+# table still stores them absolute: `script_path` and `reset_script` resolve against the
+# repository root, and `compose_file` against `stacks_dir` from `config.yaml`, which is the
+# one genuinely machine-specific value involved. An absolute path passes through unchanged.
+#
+# The loader is insert-only: editing an entry and reloading warns and skips rather than
+# updating the row, since past repetitions reference it. A changed script or compose file
+# is a new entry under a new label. Order matters, since the loader assigns ids in file
+# order and the baseline goes first.
+#
+# The InvenTree build is in both the label and `version_ref`, and the label is
+# the load-bearing half: this loader is insert-only and keys on the label.
+#
+# The tag therefore lives in two places, here and in each deployed stack's `.env`. This file is
+# not the authority: the deployed `.env` is, and `INVENTREE_TAG=1.4.2` there is what a session
+# actually runs against. If the deployment ever moves off 1.4.2, these four entries need new
+# labels rather than an edit, for the insert-only reason above.
+versions:
+  - label: InvenTree 1.4.2 Session Flow DEBUG=False cache=True
+    description: >
+      The production-correct configuration and the baseline `a` for this scenario:
+      DEBUG=False with caching left enabled.
+    script_path: scenarios/inventree_session_flow/debug_false.py
+    reset_script: scenarios/inventree_session_flow/reset_debug_false.sh
+    compose_file: inventree-baseline/docker-compose.yml
+    health_url: http://localhost:8180/api/
+    version_ref: InvenTree 1.4.2, DEBUG=False cache=True
+
+  - label: InvenTree 1.4.2 Session Flow DEBUG=True cache=False
+    description: >
+      Both factors stacked, DEBUG=True with the cache disabled: the modified version `b`
+      this scenario's comparison exists to measure against the baseline.
+    script_path: scenarios/inventree_session_flow/debug_true_cache_off.py
+    reset_script: scenarios/inventree_session_flow/reset_debug_true_cache_off.sh
+    compose_file: inventree-modified/docker-compose.yml
+    health_url: http://localhost:8480/api/
+    version_ref: InvenTree 1.4.2, DEBUG=True cache=False
+
+  # The two single-factor app versions. The stacked version above (`DEBUG=True cache=False`)
+  # measures both factors' joint effect, which is not an estimate of either factor alone. Each
+  # entry below differs from the baseline in exactly one factor, so that factor's cost is
+  # attributable.
+  #
+  # Each is measured in its own two-version session against the same baseline rather than in one
+  # four-version session: every contrast that matters is within-session (DEBUG at cache=on from
+  # one, cache at DEBUG=off from the other, the joint effect from the stacked version's session).
+  # Only two stacks are up per session, so background load stays comparable across sessions, and
+  # the baseline appears in every session.
+
+  - label: InvenTree 1.4.2 Session Flow DEBUG=True cache=True
+    description: >
+      DEBUG=True with caching left enabled: the single-factor version isolating Django's debug
+      machinery, SQL query logging and the debug middleware stack, against the same
+      DEBUG=False baseline the stacked version uses.
+    script_path: scenarios/inventree_session_flow/debug_true.py
+    reset_script: scenarios/inventree_session_flow/reset_debug_true.sh
+    compose_file: inventree-debug-true/docker-compose.yml
+    health_url: http://localhost:8280/api/
+    version_ref: InvenTree 1.4.2, DEBUG=True cache=True
+
+  - label: InvenTree 1.4.2 Session Flow DEBUG=False cache=False
+    description: >
+      DEBUG=False with the cache disabled: the single-factor version isolating the caching factor,
+      against the same baseline. `inventree-cache` still runs; only the application's use of it
+      is switched off, the same way the stacked version does it.
+    script_path: scenarios/inventree_session_flow/cache_off.py
+    reset_script: scenarios/inventree_session_flow/reset_cache_off.sh
+    compose_file: inventree-cache-off/docker-compose.yml
+    health_url: http://localhost:8380/api/
+    version_ref: InvenTree 1.4.2, DEBUG=False cache=False
+
