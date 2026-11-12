@@ -1,5 +1,3 @@
-![banner](assets/metrilens-banner-dark.png)
-
 # MetriLens
 
 ---
